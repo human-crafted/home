@@ -5,6 +5,7 @@ module.exports = {
     author: `Humancrafted Technology ltd`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,8 +36,8 @@ module.exports = {
       options: {
         bucketName: 'human-crafted-home',
         region: 'eu-west-2',
-        protocol: "https",
-        hostname: "www.humancrafted.tech",
+        protocol: 'https',
+        hostname: 'www.humancrafted.tech',
       },
     },
   ],
