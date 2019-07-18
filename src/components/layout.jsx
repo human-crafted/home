@@ -9,12 +9,13 @@ import styled, { ThemeProvider } from 'styled-components'
 // import 'normalize.css/normalize.css'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import theme from '../theme'
+import SocialIcons from './social-icons'
+import ChatIcon from './chat-icon'
 
 import NavBar from './nav-bar'
 import './layout.css'
-import logo from '../assets/logo-small.svg'
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -30,20 +31,12 @@ const Layout = ({ children }) => (
       `}
       render={data => (
         <>
-          <Link to="/">
-            <Logo>
-              <img src={logo} alt="Humancrafted logo" />
-            </Logo>
-          </Link>
           <NavBar siteTitle={data.site.siteMetadata.title} />
-          <Page>
+          <Page id="page-wrap">
             <Main>{children}</Main>
-            {/* <footer> */}
-            {/*  © {new Date().getFullYear()}, Built with */}
-            {/*  {` `} */}
-            {/*  <a href="https://www.gatsbyjs.org">Gatsby</a> */}
-            {/* </footer> */}
           </Page>
+          <SocialIcons />
+          <ChatIcon />
         </>
       )}
     />
@@ -60,24 +53,8 @@ const Page = styled.div`
   background-color: ${p => p.theme.colors.primary};
 `
 
-const Logo = styled.div`
-  width: 22px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  padding-bottom: 3px;
-  img {
-    height: 22px;
-    width: 22px;
-    position: fixed;
-    z-index: 1000;
-    padding: 0;
-    margin: 0;
-  }
-`
-
 const Main = styled.main`
+  grid-area: main;
   display: flex;
   align-items: center;
   justify-content: center;
