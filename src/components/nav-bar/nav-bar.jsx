@@ -89,6 +89,7 @@ const List = styled.ul`
 const Header = styled.header`
   position: fixed;
   height: 60px;
+  width: 100%;
   background-color: ${p => p.theme.colors.primary};
   top: 0;
   left: 0;
