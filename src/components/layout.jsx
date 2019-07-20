@@ -17,6 +17,12 @@ import ChatIcon from './chat-icon'
 import NavBar from './nav-bar'
 import './layout.css'
 
+
+// Sizes
+// Mobile - 16px
+// Large - 24px
+// Greater than large: 34px
+
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <StaticQuery

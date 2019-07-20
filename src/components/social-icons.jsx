@@ -41,7 +41,12 @@ const SocialIconsContainer = styled.div`
 `
 
 const Item = styled.div`
-  padding: 20px;
+  padding-left: 24px;
+  padding-bottom: 12px;
+  ${media.greaterThan('large')`
+     padding-left: 34px;
+     padding-bottom: 17px;
+  `};
   a {
     color: ${p => p.theme.colors.grey};
     transition: 0.2s ease-in-out;

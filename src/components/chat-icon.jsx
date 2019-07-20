@@ -17,7 +17,8 @@ export default ChatIcon
 const SocialIconsContainer = styled(Link)`
   display: none;
   ${media.greaterThan('medium')`
-    margin: 20px;
+    margin-right: 24px;
+    margin-bottom: 12px;
     display: block;
     position: fixed;
     bottom: 4vh;
@@ -27,12 +28,12 @@ const SocialIconsContainer = styled(Link)`
     height: 50px;
     right: 0;
     .svg-container {
-        position: absolute;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
  
     :after {
@@ -46,5 +47,9 @@ const SocialIconsContainer = styled(Link)`
       left: 0;
       z-index: 0;
     }
+  `};
+  ${media.greaterThan('medium')`
+    margin-right: 34px;
+    margin-bottom: 17px;
   `};
 `

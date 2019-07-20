@@ -100,10 +100,11 @@ const Header = styled.header`
   ${media.greaterThan('medium')`
     height: 90px;
     left: 50px;
-    margin-top: 5px;
+    margin-top: 2px;
   `};
   ${media.greaterThan('large')`
-    padding-left: 180px;
+     left: 184px;
+     margin-top: 3px;
   `};
 `
 
@@ -134,7 +135,7 @@ const LogoDesktopLarge = styled(Link)`
   width: 140px;
   height: 90px;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 34px;
   padding-bottom: 3px;
   img {
     width: 140px;
@@ -159,7 +160,7 @@ const MenuWrapper = styled.div`
     width: 25px;
     height: 20px;
     margin-top: -13px;
-    margin-right: 15px;
+    margin-right: 16px;
   }
 
   .bm-burger-bars,
@@ -200,13 +201,13 @@ const Logo = styled(Link)`
     height: 22px;
     width: 22px;
     z-index: 1000;
-    margin: 0 20px;
+    margin: 0 24px;
   }
 `
 
 const LogoMobile = styled(Link)`
   width: 140px;
-  margin: 0px 15px;
+  margin: 0px 16px;
   img {
     padding: 0;
     margin: 0;
