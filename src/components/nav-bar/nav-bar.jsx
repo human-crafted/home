@@ -84,6 +84,12 @@ const List = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+  ${media.greaterThan('medium')`
+    margin-top: 2px;
+  `};
+  ${media.greaterThan('large')`
+     margin-top: 3px;
+  `};
 `
 
 const Header = styled.header`
@@ -99,12 +105,10 @@ const Header = styled.header`
   justify-content: flex-start;
   ${media.greaterThan('medium')`
     height: 90px;
-    left: 50px;
-    margin-top: 2px;
+    padding-left: 50px;
   `};
   ${media.greaterThan('large')`
-     left: 184px;
-     margin-top: 3px;
+     padding-left: 184px;
   `};
 `
 
@@ -160,7 +164,7 @@ const MenuWrapper = styled.div`
     width: 25px;
     height: 20px;
     margin-top: -13px;
-    margin-right: 16px;
+    margin-right: 24px;
   }
 
   .bm-burger-bars,

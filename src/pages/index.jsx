@@ -1,72 +1,94 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from 'styled-media-query'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { keyWords } from '../seo/keywords'
+import PageContainer from '../components/page-container'
+import PageLink from '../components/page-link'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={keyWords} />
-    <LayoutContainer>
+    <PageContainer>
       <Hero>
         <div className="container">
           <h1>The digital product consultancy trusted by engineers</h1>
-          <h4>Web, Mobile Development & Design</h4>
+          <h5>Web, Mobile Development & Design</h5>
         </div>
-      </Hero>
-      <TextItem>
-        <div className="container">
+        <div className="scroll">
           <p>
-            We’re a Bournemouth based and globally operating, engineering and
-            product consultancy specialising in User Experience, React.js and
-            React Native, GraphQL, Node.js and the extended Javascript
-            ecosystem. In short, we build high quality exclusive mobile and web
-            applications.
+            Scroll down to
             <br />
-            Launching a new product? Need help with an existing project?
-            <br />
-            Work with us
+            see the whole page
           </p>
         </div>
-      </TextItem>
-    </LayoutContainer>
+      </Hero>
+    </PageContainer>
+    <TextItem>
+      <PageContainer>
+        <p>
+          Humancrafted is a Bournemouth based and globally operating,
+          engineering and product consultancy specialising in{' '}
+          <b>User Experience</b>
+,{' '}<b>React.js</b>
+{' '}
+and
+          {' '}<b>React Native</b>,{' '}<b>GraphQL</b>,{' '}<b>Node.js</b>{' '}and the extended
+          Javascript ecosystem. In short, we build high quality exclusive mobile
+          and web applications.
+          <br />
+          Launching a new product? Need help with an existing project?
+        </p>
+        <PageLink to="/work-with-us">Work with us</PageLink>
+      </PageContainer>
+    </TextItem>
   </Layout>
 )
 
 export default IndexPage
 
-const LayoutContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`
-
 const Hero = styled.div`
-  height: calc(100vh - 90px);
+  width: 100%;
+  height: 100vh;
+  ${media.greaterThan('medium')`
+  margin-top: -90px;
+  `};
   display: flex;
-  width: 86vw;
+  justify-content: center;
+  flex-direction: column;
   .container {
-    width: 550px;
+    margin-top: auto;
+    max-width: 500px;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    h4 {
+    h5 {
       color: ${p => p.theme.colors.grey};
       font-family: ${p => p.theme.fonts.primary.light};
-      font-weight: unset;
+      font-weight: bold;
+    }
+  }
+  .scroll {
+    text-align: center;
+    align-self: center;
+    margin-top: auto;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+    p {
+      margin-bottom: 12px;
     }
   }
 `
 
 const TextItem = styled.div`
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   width: 100vw;
   justify-content: center;
   background-color: ${p => p.theme.colors.secondary}};
-  .container {
-    width: 86vw;
-  }
   br {
     line-height: 60px;
   }

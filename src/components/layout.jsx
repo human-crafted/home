@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 // import 'normalize.css/normalize.css'
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -16,12 +16,6 @@ import ChatIcon from './chat-icon'
 
 import NavBar from './nav-bar'
 import './layout.css'
-
-
-// Sizes
-// Mobile - 16px
-// Large - 24px
-// Greater than large: 34px
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -38,9 +32,7 @@ const Layout = ({ children }) => (
       render={data => (
         <>
           <NavBar siteTitle={data.site.siteMetadata.title} />
-          <Page id="page-wrap">
-            <Main>{children}</Main>
-          </Page>
+          <main>{children}</main>
           <SocialIcons />
           <ChatIcon />
         </>
@@ -54,14 +46,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-const Page = styled.div`
-  background-color: ${p => p.theme.colors.primary};
-`
-
-const Main = styled.main`
-  grid-area: main;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
