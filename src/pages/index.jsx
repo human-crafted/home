@@ -1,13 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import WhatWeCanOffer from '../components/what-we-can-offer'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { keyWords } from '../seo/keywords'
 import PageContainer from '../components/page-container'
 import PageLink from '../components/page-link'
+import Process from '../components/process'
+import ProjectList from '../components/project-List'
+import PageEnd from '../components/page-end'
 
-const IndexPage = () => (
+const IndexPage = props => (
   <Layout>
     <SEO title="Home" keywords={keyWords} />
     <PageContainer>
@@ -31,28 +37,57 @@ const IndexPage = () => (
           Humancrafted is a Bournemouth based and globally operating,
           engineering and product consultancy specialising in{' '}
           <b>User Experience</b>
-,{' '}<b>React.js</b>
+,<b>React.js</b>
 {' '}
-and
-          {' '}<b>React Native</b>,{' '}<b>GraphQL</b>,{' '}<b>Node.js</b>{' '}and the extended
-          Javascript ecosystem. In short, we build high quality exclusive mobile
-          and web applications.
-          <br />
+and<b>React Native</b>
+,
+{' '}
+          <b>GraphQL</b>
+,<b>Node.js</b>
+{' '}
+and the extended Javascript ecosystem.
+          In short, we build high quality exclusive mobile and web applications.
+<br />
           Launching a new product? Need help with an existing project?
         </p>
         <PageLink to="/work-with-us">Work with us</PageLink>
       </PageContainer>
     </TextItem>
+    <WhatWeCanOffer />
+    <DeskImage fluid={props.data.deskImg.childImageSharp.fluid} />
+    <Process />
+    <ProjectList />
+    <PageEnd />
   </Layout>
 )
 
 export default IndexPage
 
+export const pageQuery = graphql`
+  query {
+    deskImg: file(relativePath: { eq: "desk.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+const DeskImage = styled(Img)`
+  display: none;
+  height: 75vh;
+  ${media.greaterThan('medium')`
+    display: block;
+  `};
+`
+
 const Hero = styled.div`
   width: 100%;
   height: 100vh;
   ${media.greaterThan('medium')`
-  margin-top: -90px;
+    margin-top: -90px;
   `};
   display: flex;
   justify-content: center;
@@ -93,6 +128,9 @@ const TextItem = styled.div`
     line-height: 60px;
   }
   p {
+    ${media.greaterThan('medium')`
+      max-width: 60vw;
+    `};
     margin: 0;
   }
 `

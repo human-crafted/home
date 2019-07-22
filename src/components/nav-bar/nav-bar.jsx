@@ -93,6 +93,7 @@ const List = styled.ul`
 `
 
 const Header = styled.header`
+  z-index: 999;
   position: fixed;
   height: 60px;
   width: 100%;
