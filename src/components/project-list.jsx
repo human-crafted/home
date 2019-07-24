@@ -67,6 +67,7 @@ const ArticleContainer = styled.a`
   color: white;
   text-decoration: none;
   height: 250px;
+  transition: 0.2s ease-in-out;
   p {
     margin: 0;
     color: ${p => p.theme.colors.grey};
@@ -79,7 +80,6 @@ const ArticleContainer = styled.a`
   `}
   :hover {
     transform: translate(0px, -8px);
-    transition: 0.2s ease-in-out;
   }
 `
 

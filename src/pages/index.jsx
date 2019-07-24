@@ -12,6 +12,7 @@ import PageLink from '../components/page-link'
 import Process from '../components/process'
 import ProjectList from '../components/project-List'
 import PageEnd from '../components/page-end'
+import Footer from '../components/footer'
 
 const IndexPage = props => (
   <Layout>
@@ -58,6 +59,7 @@ and the extended Javascript ecosystem.
     <Process />
     <ProjectList />
     <PageEnd />
+    <Footer />
   </Layout>
 )
 

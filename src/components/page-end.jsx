@@ -8,10 +8,8 @@ const PageEnd = props => (
   <PageContainer>
     <Container>
       <h1>
-        Here more{" "}
-        <StyledLink to="/what-we-do">about us</StyledLink>
+        Here more <StyledLink to="/what-we-do">about us</StyledLink>
       </h1>
-      <p>Humancrafted 2019</p>
     </Container>
   </PageContainer>
 )
@@ -27,5 +25,5 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 `
