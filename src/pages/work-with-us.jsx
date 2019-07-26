@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Layout from '../components/layout'
@@ -8,8 +6,8 @@ import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
 import Footer from '../components/footer'
 
-const InputField = ({ label, type, placeholder, required }) => (
-  <Label>
+const InputField = ({ label, type, placeholder, required, fullWidth }) => (
+  <Label fullWidth={fullWidth}>
     {label}
     {required && <>*</>}
     <Input
@@ -25,8 +23,11 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  max-width: 600px;
   margin-bottom: 16px;
+  ${media.greaterThan('large')`
+    flex-basis: ${p => (p.fullWidth ? '100' : '46')}%;
+    margin-right: 4%;
+  `};
 `
 
 const Input = styled.input`
@@ -75,7 +76,7 @@ const WorkWithUs = () => (
             type="tel"
             placeholder="Your phone number"
           />
-          <Label>
+          <Label fullWidth>
             Message*
             <textarea
               name="message"
@@ -89,7 +90,6 @@ const WorkWithUs = () => (
         </Form>
       </Container>
     </PageContainer>
-    <Footer />
   </Layout>
 )
 
@@ -100,10 +100,19 @@ const Container = styled.div`
   ${media.greaterThan('medium')`
     margin-top: 0px;
   `};
+  ${media.greaterThan('large')`
+    max-width: 750px;
+  `};
   min-height: 85vh;
 `
 
 const Form = styled.form`
+  ${media.greaterThan('large')`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+  `};
   textarea {
     resize: none;
     margin-top: 6px;

@@ -16,6 +16,7 @@ import ChatIcon from './chat-icon'
 
 import NavBar from './nav-bar'
 import './layout.css'
+import Footer from './footer'
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -35,6 +36,7 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <SocialIcons />
           <ChatIcon />
+          <Footer />
         </>
       )}
     />

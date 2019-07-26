@@ -12,7 +12,7 @@ import PageLink from '../components/page-link'
 import Process from '../components/process'
 import ProjectList from '../components/project-List'
 import PageEnd from '../components/page-end'
-import Footer from '../components/footer'
+import TextBanner from '../components/TextBanner'
 
 const IndexPage = props => (
   <Layout>
@@ -32,34 +32,32 @@ const IndexPage = props => (
         </div>
       </Hero>
     </PageContainer>
-    <TextItem>
-      <PageContainer>
-        <p>
-          Humancrafted is a Bournemouth based and globally operating,
-          engineering and product consultancy specialising in{' '}
-          <b>User Experience</b>
-,<b>React.js</b>
+    <TextBanner>
+      <p>
+        Humancrafted is a Bournemouth based and globally operating, engineering
+        and product consultancy specialising in 
 {' '}
-and<b>React Native</b>
-,
+<b>User Experience</b>
+,{' '}
+        <b>React.js</b>
 {' '}
-          <b>GraphQL</b>
-,<b>Node.js</b>
+and{' '}<b>React Native</b>
+,{' '}<b>GraphQL</b>
+,{' '}<b>Node.js</b>
 {' '}
-and the extended Javascript ecosystem.
-          In short, we build high quality exclusive mobile and web applications.
+and{' '}
+        the extended Javascript ecosystem. In short, we build high quality
+        exclusive mobile and web applications.
 <br />
-          Launching a new product? Need help with an existing project?
-        </p>
-        <PageLink to="/work-with-us">Work with us</PageLink>
-      </PageContainer>
-    </TextItem>
+        Launching a new product? Need help with an existing project?
+      </p>
+      <PageLink to="/work-with-us">Work with us</PageLink>
+    </TextBanner>
     <WhatWeCanOffer />
     <DeskImage fluid={props.data.deskImg.childImageSharp.fluid} />
     <Process />
     <ProjectList />
     <PageEnd />
-    <Footer />
   </Layout>
 )
 
@@ -116,23 +114,5 @@ const Hero = styled.div`
     p {
       margin-bottom: 12px;
     }
-  }
-`
-
-const TextItem = styled.div`
-  padding-top: 40px;
-  padding-bottom: 40px;
-  display: flex;
-  width: 100vw;
-  justify-content: center;
-  background-color: ${p => p.theme.colors.secondary}};
-  br {
-    line-height: 60px;
-  }
-  p {
-    ${media.greaterThan('medium')`
-      max-width: 60vw;
-    `};
-    margin: 0;
   }
 `

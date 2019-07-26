@@ -4,18 +4,13 @@ import { Link } from 'gatsby'
 
 const Footer = () => (
   <FooterContainer>
-    <FooterLink>
-      2019
-      <br />
-      Human Crafted Technology ltd ©
-    </FooterLink>
+    <FooterLink>Human Crafted Technology ltd - 2019</FooterLink>
   </FooterContainer>
 )
 
 export default Footer
 
 const FooterContainer = styled.div`
-  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
