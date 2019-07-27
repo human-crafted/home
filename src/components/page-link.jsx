@@ -13,9 +13,8 @@ const Item = ({ to, children }) => (
 export default Item
 
 const NavLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  margin-top: 12px;
+  display: block;
+  padding: 30px 0px;
   color: ${p => p.theme.colors.grey};
   text-decoration: none;
   :hover {
@@ -25,6 +24,6 @@ const NavLink = styled(Link)`
 `
 
 const Arrow = styled(FaLongArrowAltRight)`
-  margin-left: 4px;
-  margin-top: 3px;
+  margin-left: 8px;
+  margin-bottom: -4px;
 `

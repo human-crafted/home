@@ -22,7 +22,7 @@ const About = () => (
           We’re a Bournemouth based and globally operating, engineering and
           product consultancy specialising in <Bold>User Experience</Bold>,{" "}<Bold>React.js</Bold>{" "}and{" "}
           <Bold>React Native</Bold>,{" "}<Bold>GraphQL</Bold>,{" "}<Bold>Node.js</Bold>{" "}and the extended Javascript ecosystem.
-          We’re about quality and the human touch.
+          In short, we build high quality exclusive mobile and web applications.
           <br />
           Humancrafted was founded by{" "}<a href="https://www.linkedin.com/in/mitchclay/" target="_blank">
           Mitch Clay

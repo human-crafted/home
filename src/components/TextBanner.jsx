@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 import PageContainer from './page-container'
 
 const TextBanner = props => (
-  <TextItem>
+  <TextItem clear={props.clear}>
     <PageContainer>{props.children}</PageContainer>
   </TextItem>
 )
@@ -12,19 +12,28 @@ const TextBanner = props => (
 export default TextBanner
 
 const TextItem = styled.div`
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 45px 0px;
   display: flex;
   width: 100vw;
   justify-content: center;
-  background-color: ${p => p.theme.colors.secondary}};
+  ${p => !p.clear && `background-color: ${p.theme.colors.secondary}}`};
+  h2 {
+    line-height: 2.25rem;
+    margin-bottom: 45px;
+  }
   br {
     line-height: 60px;
   }
   p {
-    ${media.greaterThan('medium')`
-      max-width: 60vw;
-    `};
     margin: 0;
   }
+  ${media.greaterThan('medium')`
+   padding: 90px 0px;
+   p {
+      max-width: 60vw;
+      }
+     h2 {
+      margin-bottom: 80px;
+      }
+    `};
 `
