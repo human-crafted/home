@@ -45,31 +45,33 @@ const ItemContainer = styled.div`
 `
 
 const WhatWeCanOffer = props => (
-  <PageContainer>
-    <Container>
-      <h2>What We Can Offer You</h2>
-      <div className="grid">
-        <Item number="01" title="Product Design" top>
-          Qualified UX experts with users at heart, helping you research, refine
-          and test your product road-map.
-        </Item>
-        <Item number="02" title="Architecture and Auditing" top>
-          Get it right with architecture that scales across large teams and huge
-          user bases. Improve your applications metrics with deep code
-          introspection.
-        </Item>
-        <Item number="03" title="Frontend - Web and Mobile Applications">
-          Quality frontend code, build by design-savvy engineers that love sleak
-          solutions.
-        </Item>
-        <Item number="04" title="Backend / Cloud Platform" last>
-          Enterprise backend systems in Node.js, including service architecture,
-          cloud deployment and scalability.
-        </Item>
-      </div>
-      <PageLink to="/what-we-do">What we do</PageLink>
-    </Container>
-  </PageContainer>
+  <Background black={props.black}>
+    <PageContainer>
+      <Container>
+        <h2>What We Can Offer You</h2>
+        <div className="grid">
+          <Item number="01" title="Product Design" top>
+            Qualified UX experts with users at heart, helping you research,
+            refine and test your product road-map.
+          </Item>
+          <Item number="02" title="Architecture and Auditing" top>
+            Get it right with architecture that scales across large teams and
+            huge user bases. Improve your applications metrics with deep code
+            introspection.
+          </Item>
+          <Item number="03" title="Frontend - Web and Mobile Applications">
+            Quality frontend code, build by design-savvy engineers that love
+            sleak solutions.
+          </Item>
+          <Item number="04" title="Backend / Cloud Platform" last>
+            Enterprise backend systems in Node.js, including service
+            architecture, cloud deployment and scalability.
+          </Item>
+        </div>
+        <PageLink to="/what-we-do">What we do</PageLink>
+      </Container>
+    </PageContainer>
+  </Background>
 )
 
 export default WhatWeCanOffer
@@ -91,4 +93,8 @@ const Container = styled.div`
     margin-bottom: 80px;
     }
   `};
+`
+
+const Background = styled.div`
+  ${p => p.black && `background-color: ${p.theme.colors.secondary}`}
 `

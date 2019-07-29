@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 import PageContainer from './page-container'
 
 const TextBanner = props => (
-  <TextItem clear={props.clear} headerRight={props.headerRight}>
+  <TextItem clear={props.clear} headerRight={props.headerRight} small={props.small}>
     <PageContainer>{props.children}</PageContainer>
   </TextItem>
 )
@@ -30,7 +30,7 @@ const TextItem = styled.div`
   ${media.greaterThan('medium')`
    padding: 90px 0px;
    p {
-      max-width: 60vw;
+      max-width: ${p => p.small ? `600px` : `60vw`};
       }
      h2 {
       margin-bottom: 80px;

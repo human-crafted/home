@@ -14,15 +14,10 @@ const WhatWeDo = () => (
     <Container>
       <PageContainer>
         <div className="heading">
-          <h1>
-            Quality software
-            <br />
-{' '}
-done right
-</h1>
+          <h1>Quality software done right</h1>
         </div>
       </PageContainer>
-      <TextBanner>
+      <TextBanner clear small>
         <p>
           Humancrafted partners with clients to create solutions to the toughest
           user and software problems. Focusing on Javascript as our core
@@ -36,8 +31,8 @@ done right
         </p>
         <PageLink to="/work-with-us">Lets get started</PageLink>
       </TextBanner>
-      <WhatWeCanOffer />
-      <TextBanner>
+      <WhatWeCanOffer black />
+      <TextBanner clear>
         <h2>New Products & MVPs</h2>
         <p>
           You know what needs to happen next, and you have a vision for the
@@ -58,7 +53,7 @@ done right
           to establishing best practices, and more.
         </p>
       </TextBanner>
-      <TextBanner clear>
+      <TextBanner>
         <h2>Existing Products</h2>
         <p>
           Maybe you’re looking to modernize your product, transition your team
@@ -75,7 +70,7 @@ done right
           you along the way to avoid common pitfalls.
         </p>
       </TextBanner>
-      <PageEnd/>
+      <PageEnd />
     </Container>
   </>
 )
@@ -91,7 +86,7 @@ const Container = styled.div`
     margin-top: 0px;
   `};
   .heading {
-    height: 25vh;
+    padding-top: 90px;
     display: flex;
     align-items: center;
   }
