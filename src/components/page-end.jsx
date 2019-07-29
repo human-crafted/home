@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import media from 'styled-media-query'
 import { Link } from 'gatsby'
 import PageContainer from './page-container'
 
-const PageEnd = props => (
+const PageEnd = () => (
   <PageContainer>
     <Container>
       <h1>
@@ -25,5 +24,5 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: calc(100vh - 26px);
 `

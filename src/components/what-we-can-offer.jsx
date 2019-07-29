@@ -68,7 +68,7 @@ const WhatWeCanOffer = props => (
             architecture, cloud deployment and scalability.
           </Item>
         </div>
-        <PageLink to="/what-we-do">What we do</PageLink>
+        <PageLink to="/what-we-do">Hear more</PageLink>
       </Container>
     </PageContainer>
   </Background>

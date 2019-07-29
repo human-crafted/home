@@ -5,7 +5,7 @@ import media from 'styled-media-query'
 import { FaComments } from 'react-icons/fa'
 
 const ChatIcon = () => (
-  <SocialIconsContainer to="/work-with-us">
+  <SocialIconsContainer to="/contact">
     <div className="svg-container">
       <FaComments size={26} />
     </div>

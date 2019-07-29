@@ -22,7 +22,7 @@ and
 <br />
       Launching a new product? Need help with an existing project?
     </p>
-    <PageLink to="/work-with-us">Work with us</PageLink>
+    <PageLink to="/contact">Work with us</PageLink>
   </TextBanner>
 )
 

@@ -57,7 +57,7 @@ const NavBar = () => {
               <Item to="/about" text="About" />
               <Item to="/what-we-do" text="What we do" />
               <Item to="/contact" text="Contact Us" />
-              <SocialIcons />
+              <SocialIcons mobile />
             </Menu>
           </MenuWrapper>
           <LogoMobile to="/">
