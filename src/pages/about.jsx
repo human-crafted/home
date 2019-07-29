@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
 
 const About = () => (
-  <Layout>
+  <>
     <SEO title="About" />
     <PageContainer>
       <Container>
@@ -54,7 +53,7 @@ const About = () => (
         </p>
       </Container>
     </PageContainer>
-  </Layout>
+  </>
 )
 
 export default About

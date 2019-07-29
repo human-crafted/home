@@ -4,7 +4,6 @@ import media from 'styled-media-query'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import WhatWeCanOffer from '../components/what-we-can-offer'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { keyWords } from '../seo/keywords'
 import Process from '../components/process'
@@ -14,7 +13,7 @@ import Hero from '../components/hero'
 import Intro from '../components/intro'
 
 const IndexPage = props => (
-  <Layout>
+  <>
     <SEO title="Home" keywords={keyWords} />
     <Hero />
     <Intro />
@@ -23,7 +22,7 @@ const IndexPage = props => (
     <Process />
     <ProjectList />
     <PageEnd />
-  </Layout>
+  </>
 )
 
 export default IndexPage

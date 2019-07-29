@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
-import Footer from '../components/footer'
 
 const InputField = ({ label, type, placeholder, required, fullWidth }) => (
   <Label fullWidth={fullWidth}>
@@ -50,7 +48,7 @@ const Input = styled.input`
 `
 
 const Contact = () => (
-  <Layout>
+  <>
     <PageContainer>
       <Container>
         <SEO title="Work With Us" />
@@ -89,7 +87,7 @@ const Contact = () => (
         </Form>
       </Container>
     </PageContainer>
-  </Layout>
+  </>
 )
 
 export default Contact

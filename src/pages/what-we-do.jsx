@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
 import TextBanner from '../components/text-banner'
@@ -10,7 +9,7 @@ import WhatWeCanOffer from '../components/what-we-can-offer'
 import PageEnd from '../components/page-end'
 
 const WhatWeDo = () => (
-  <Layout>
+  <>
     <SEO title="What We Do" />
     <Container>
       <PageContainer>
@@ -78,7 +77,7 @@ done right
       </TextBanner>
       <PageEnd/>
     </Container>
-  </Layout>
+  </>
 )
 
 export default WhatWeDo

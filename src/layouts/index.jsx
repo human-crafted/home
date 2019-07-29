@@ -11,14 +11,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import theme from '../theme'
-import SocialIcons from './social-icons'
-import ChatIcon from './chat-icon'
+import SocialIcons from '../components/social-icons'
+import ChatIcon from '../components/chat-icon'
 
-import NavBar from './nav-bar'
+import NavBar from '../components/nav-bar'
 import './layout.css'
-import Footer from './footer'
+import Footer from '../components/footer'
+import Transition from '../components/transistion'
 
-const Layout = ({ children }) => (
+const Index = ({ children, location }) => (
   <ThemeProvider theme={theme}>
     <StaticQuery
       query={graphql`
@@ -33,7 +34,9 @@ const Layout = ({ children }) => (
       render={data => (
         <>
           <NavBar siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
+          <Transition location={location}>
+            <main>{children}</main>
+          </Transition>
           <SocialIcons />
           <ChatIcon />
           <Footer />
@@ -43,8 +46,8 @@ const Layout = ({ children }) => (
   </ThemeProvider>
 )
 
-Layout.propTypes = {
+Index.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Index

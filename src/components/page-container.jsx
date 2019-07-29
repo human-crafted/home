@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
 import media from 'styled-media-query'
-import './layout.css'
 
 const PageContainer = props => <Container>{props.children}</Container>
 
