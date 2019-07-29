@@ -638,3 +638,7 @@ pre tt:after {
   font-family: "body-main-bold";
   src: url("../assets/fonts/futura-bold.ttf");
 }
+
+main {
+  transition: 1s ease-in-out;
+}

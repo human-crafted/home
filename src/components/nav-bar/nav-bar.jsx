@@ -41,7 +41,7 @@ const NavBar = () => {
           <List>
             <Item to="/about" text="About" />
             <Item to="/what-we-do" text="What we do" />
-            <Item to="/work-with-us" text="Work with us" />
+            <Item to="/contact" text="Contact Us" />
           </List>
         </Header>
       </Desktop>
@@ -56,7 +56,7 @@ const NavBar = () => {
               <Item to="/" text="Home" />
               <Item to="/about" text="About" />
               <Item to="/what-we-do" text="What we do" />
-              <Item to="/work-with-us" text="Work with us" />
+              <Item to="/contact" text="Contact Us" />
               <SocialIcons />
             </Menu>
           </MenuWrapper>

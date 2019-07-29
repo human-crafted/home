@@ -4,17 +4,21 @@ import { Link } from 'gatsby'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 
 const Item = ({ to, children }) => (
-  <NavLink exact to={to}>
-    {children}
-    <Arrow size={18} />
-  </NavLink>
+  <Container>
+    <NavLink exact to={to}>
+      {children}
+      <Arrow size={18} />
+    </NavLink>
+  </Container>
 )
 
 export default Item
 
-const NavLink = styled(Link)`
-  display: block;
+const Container = styled.div`
   padding: 30px 0px;
+`
+
+const NavLink = styled(Link)`
   color: ${p => p.theme.colors.grey};
   text-decoration: none;
   :hover {
@@ -25,5 +29,5 @@ const NavLink = styled(Link)`
 
 const Arrow = styled(FaLongArrowAltRight)`
   margin-left: 8px;
-  margin-bottom: -4px;
+  margin-bottom: -5px;
 `

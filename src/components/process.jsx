@@ -1,6 +1,6 @@
 import React from 'react'
 import PageLink from './page-link'
-import TextBanner from './TextBanner'
+import TextBanner from './text-banner'
 
 const Process = () => (
   <TextBanner>

@@ -25,6 +25,7 @@ const Label = styled.label`
   font-weight: bold;
   margin-bottom: 16px;
   ${media.greaterThan('large')`
+    margin-bottom: 0;
     flex-basis: ${p => (p.fullWidth ? '100' : '46')}%;
     margin-right: 4%;
   `};
@@ -48,16 +49,14 @@ const Input = styled.input`
   border-radius: 3px;
 `
 
-const WorkWithUs = () => (
+const Contact = () => (
   <Layout>
     <PageContainer>
       <Container>
         <SEO title="Work With Us" />
-        <h1>
-          Nice to meet you!
-          <br />
-          How can we help?
-        </h1>
+        <div className="header">
+          <h1>We'd love to talk, how can we help?</h1>
+        </div>
         <Form method="post" action="https://formspree.io/mqnkeldx">
           <InputField
             label="Name"
@@ -93,10 +92,17 @@ const WorkWithUs = () => (
   </Layout>
 )
 
-export default WorkWithUs
+export default Contact
 
 const Container = styled.div`
+  .header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
   margin-top: 90px;
+  display: flex;
+  flex-direction: column;
   ${media.greaterThan('medium')`
     margin-top: 0px;
   `};
@@ -107,6 +113,7 @@ const Container = styled.div`
 `
 
 const Form = styled.form`
+  flex: 1;
   ${media.greaterThan('large')`
     display: flex;
     flex-direction: row;
@@ -137,6 +144,7 @@ const Button = styled.button`
   font-weight: bold;
   font-size: 18px;
   line-height: 48px;
+  height: 50px;
   background-color: white;
   color: rgb(20, 20, 20);
   text-align: center;

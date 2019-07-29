@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
-import TextBanner from '../components/TextBanner'
+import TextBanner from '../components/text-banner'
 import PageLink from '../components/page-link'
 import WhatWeCanOffer from '../components/what-we-can-offer'
 import PageEnd from '../components/page-end'
@@ -16,10 +16,10 @@ const WhatWeDo = () => (
       <PageContainer>
         <div className="heading">
           <h1>
-            A mobile led world
+            Quality software
             <br />
 {' '}
-built by humans
+done right
 </h1>
         </div>
       </PageContainer>

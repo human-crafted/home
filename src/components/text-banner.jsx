@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 import PageContainer from './page-container'
 
 const TextBanner = props => (
-  <TextItem clear={props.clear}>
+  <TextItem clear={props.clear} headerRight={props.headerRight}>
     <PageContainer>{props.children}</PageContainer>
   </TextItem>
 )

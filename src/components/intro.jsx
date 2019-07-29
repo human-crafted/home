@@ -1,5 +1,5 @@
 import React from 'react'
-import TextBanner from './TextBanner'
+import TextBanner from './text-banner'
 import PageLink from './page-link'
 
 const intro = () => (

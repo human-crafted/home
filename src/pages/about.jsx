@@ -60,8 +60,11 @@ const About = () => (
 export default About
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
   .heading {
-    height: 25vh;
+    flex: 1;
     display: flex;
     align-items: center;
   }
