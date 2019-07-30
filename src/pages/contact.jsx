@@ -21,7 +21,7 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
   ${media.greaterThan('large')`
     margin-bottom: 0;
     flex-basis: ${p => (p.fullWidth ? '100' : '46')}%;
@@ -102,6 +102,8 @@ const Container = styled.div`
   flex-direction: column;
   ${media.greaterThan('large')`
     max-width: 750px;
+    height: 700px;
+    min-height: 700px;
   `};
   min-height: 85vh;
 `
@@ -155,4 +157,8 @@ const Button = styled.button`
     background-color: rgba(255, 255, 255, 0.7);
     color: rgb(20, 20, 20);
   }
+  width: 100%;
+  ${media.greaterThan('large')`
+    width: unset;
+  `};
 `

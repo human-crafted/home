@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import PageContainer from './page-container'
+import ScrollDown from './scroll-down';
 
 const Hero = () => (
   <PageContainer>
@@ -11,6 +12,7 @@ const Hero = () => (
         <h5>Web, Mobile Development & Design</h5>
       </div>
       <div className="scroll">
+        <ScrollDown />
         <p>
           Scroll down to
           <br />
@@ -25,9 +27,12 @@ export default Hero
 
 const HeroContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  margin-top: -60px;
+  padding-top: 60px;
   ${media.greaterThan('medium')`
     margin-top: -90px;
+    padding-top: 90px;
   `};
   display: flex;
   justify-content: center;
@@ -52,7 +57,7 @@ const HeroContainer = styled.div`
     line-height: 16px;
     font-weight: bold;
     p {
-      margin-bottom: 12px;
+      margin-bottom: 24px;
     }
   }
 `
