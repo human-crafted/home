@@ -98,12 +98,8 @@ const Container = styled.div`
     display: flex;
     align-items: center;
   }
-  margin-top: 90px;
   display: flex;
   flex-direction: column;
-  ${media.greaterThan('medium')`
-    margin-top: 0px;
-  `};
   ${media.greaterThan('large')`
     max-width: 750px;
   `};

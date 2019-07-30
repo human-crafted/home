@@ -5,8 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 // import 'normalize.css/normalize.css'
+import media from 'styled-media-query'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
@@ -35,7 +36,7 @@ const Index = ({ children, location }) => (
         <>
           <NavBar siteTitle={data.site.siteMetadata.title} />
           <Transition location={location}>
-            <main>{children}</main>
+            <Main>{children}</Main>
           </Transition>
           <SocialIcons />
           <ChatIcon />
@@ -51,3 +52,14 @@ Index.propTypes = {
 }
 
 export default Index
+
+const Main = styled.main`
+  transition: 1s ease-in-out;
+  position: relative;
+  min-height: calc(100vh - 30px);
+  padding-top: 60px;
+  ${media.greaterThan('medium')`
+    margin-top: -90px;
+    padding-top: 90px;
+  `};
+`

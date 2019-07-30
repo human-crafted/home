@@ -11,9 +11,12 @@ const Footer = () => (
 export default Footer
 
 const FooterContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 30px;
+  margin: 0;
+  clear: both;
+  width: 100%;
+  position: relative;
+  text-align: center;
 `
 
 const FooterLink = styled(Link)`

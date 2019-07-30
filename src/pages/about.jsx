@@ -74,9 +74,7 @@ const Container = styled.div`
     font-size: 16px;
     color: white;
   }
-  margin-top: 90px;
   ${media.greaterThan('medium')`
-    margin-top: 0px;
     max-width: 750px;
   `};
   min-height: 85vh;
