@@ -14,21 +14,24 @@ const WhatWeDo = props => (
     <SEO title="What We Do" />
     <HeroImage fluid={props.data.successImg.childImageSharp.fluid} />
     <Container>
-      <TextBanner clear>
-        <h1>Quality software done right</h1>
-        <p>
-          Humancrafted partners with clients to create solutions to the toughest
-          user and software problems. Focusing on Javascript as our core
-          technology, we utilise React.js and React Native, GraphQL, Node.js and
-          the extended Javascript ecosystem to build web apps, mobile apps,
-          cloud services and more.
-          <br />
-          Our approach is tailored to each product so we will always work with
-          your team to select the technologies best suited to your needs. No
-          matter where you are in the product life cycle our expertise can help.
-        </p>
-        <PageLink to="/work-with-us">Lets get started</PageLink>
-      </TextBanner>
+      <div className="header">
+        <TextBanner clear>
+          <h1>Quality software done right</h1>
+          <p>
+            Humancrafted partners with clients to create solutions to the
+            toughest user and software problems. Focusing on Javascript as our
+            core technology, we utilise React.js and React Native, GraphQL,
+            Node.js and the extended Javascript ecosystem to build web apps,
+            mobile apps, cloud services and more.
+            <br />
+            Our approach is tailored to each product so we will always work with
+            your team to select the technologies best suited to your needs. No
+            matter where you are in the product life cycle our expertise can
+            help.
+          </p>
+          <PageLink to="/contact">Lets get started</PageLink>
+        </TextBanner>
+      </div>
       <WhatWeCanOffer black />
       <TextBanner clear>
         <h1>New Products & MVPs</h1>
@@ -44,24 +47,23 @@ const WhatWeDo = props => (
           goals.
           <br />
           Humancrafted’s expertise and leadership will help you create a
-          sustainable, maintainable product that your team can carry into the
-          future once our work is done. We will guide you through every step of
-          the process from determining the best UI/UX, to exploring the best way
-          to keep your users engaged, to setting up backend and cloud services,
-          to establishing best practices, and more.
+          sustainable and maintainable product that you'll be able to carry into
+          the future even when we're done. We will guide you through every step
+          of the process from determining the best UI/UX, to exploring the best
+          way to keep your users engaged, to setting up backend and cloud
+          services, to establishing best practices, and more.
         </p>
       </TextBanner>
-      <TextBanner>
+      <TextBanner right>
         <h1>Existing Products</h1>
         <p>
-          Maybe you’re looking to modernize your product, transition your team
-          to a new technology, or troubleshoot issues, regardless Humancrafted
-          can help. We can audit your product, help identify areas for
-          improvement, select the technology to help advance your product and
-          implement solutions to help you reach your goals. We will work closely
-          with you to create lasting solutions to help your teams build the
-          skills they need to maintain and update the product once our work is
-          done.
+          Maybe you’re looking to modernize your product, transition to a new
+          technology, or troubleshoot issues, regardless Humancrafted can help.
+          We can audit your product, help identify areas for improvement, select
+          the technology to help advance your product and implement solutions to
+          help you reach your goals. We will work closely with you to create
+          lasting solutions to build the product your users deserve alongside
+          the skills required keep driving forward.
           <br />
           Transitioning to new technology can be hard, we get it, so we’re here
           to help guide you through the process and common pain points. Teaching
@@ -98,7 +100,9 @@ const HeroImage = styled(Img)`
 `
 
 const Container = styled.div`
-z-index: 999;
+  .header {
+    position: relative;
+  }
   br {
     line-height: 60px;
   }

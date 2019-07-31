@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const Footer = ({ black }) => (
   <FooterContainer black={black}>
-    <FooterLink>Human Crafted Technology ltd - 2019</FooterLink>
+    <FooterLink to="/">Human Crafted Technology ltd - 2019</FooterLink>
   </FooterContainer>
 )
 

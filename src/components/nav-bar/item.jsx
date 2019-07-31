@@ -5,7 +5,7 @@ import media from 'styled-media-query'
 
 const Item = ({ text, to }) => (
   <HeaderItem>
-    <NavLink exact to={to} activeClassName="active">
+    <NavLink to={to} activeClassName="active">
       {text}
     </NavLink>
   </HeaderItem>

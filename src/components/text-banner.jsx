@@ -5,11 +5,16 @@ import PageContainer from './page-container'
 
 const TextBanner = props => (
   <TextItem
+    right={props.right}
     clear={props.clear}
     headerRight={props.headerRight}
     small={props.small}
   >
-    <PageContainer>{props.children}</PageContainer>
+    <PageContainer>
+      <div className="container">
+        <div>{props.children}</div>
+      </div>
+    </PageContainer>
   </TextItem>
 )
 
@@ -23,6 +28,13 @@ const TextItem = styled.div`
   height: 110vh;
   align-items: center;
   justify-content: center;
+  ${p => p.right && `
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  `};
   ${p => !p.clear && `background-color: ${p.theme.colors.secondary}}`};
   h1 {
     line-height: 2.25rem;

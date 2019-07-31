@@ -5,7 +5,7 @@ import { FaLongArrowAltRight } from 'react-icons/fa'
 
 const Item = ({ to, children }) => (
   <Container>
-    <NavLink exact to={to}>
+    <NavLink to={to}>
       {children}
       <Arrow size={18} />
     </NavLink>
