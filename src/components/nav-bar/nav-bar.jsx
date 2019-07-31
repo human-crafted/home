@@ -17,7 +17,7 @@ const NavBar = () => {
   const handleScroll = () => {
     if (!mobileMenuIsOpen) {
       setScrollPosition(document.body.getBoundingClientRect().top)
-      setShow(document.body.getBoundingClientRect().top > scrollPosition)
+      setShow(document.body.getBoundingClientRect().top > scrollPosition || scrollPosition > 0)
     }
   }
 
@@ -28,6 +28,7 @@ const NavBar = () => {
     })
   }
 
+  const closeMenu = () => setMobileMenuIsOpen(false)
   return (
     <Transition>
       <Desktop>
@@ -55,14 +56,15 @@ const NavBar = () => {
         >
           <MenuWrapper>
             <Menu
+              isOpen={mobileMenuIsOpen}
               onStateChange={({ isOpen }) => setMobileMenuIsOpen(isOpen)}
               width="100%"
               right
             >
-              <Item to="/" text="Home" />
-              <Item to="/about" text="About" />
-              <Item to="/what-we-do" text="What we do" />
-              <Item to="/contact" text="Contact Us" />
+              <Item to="/" text="Home" closeMenu={closeMenu} />
+              <Item to="/about" text="About" closeMenu={closeMenu} />
+              <Item to="/what-we-do" text="What we do" closeMenu={closeMenu} />
+              <Item to="/contact" text="Contact Us" closeMenu={closeMenu} />
               <SocialIcons mobile />
             </Menu>
           </MenuWrapper>

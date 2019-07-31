@@ -95,18 +95,19 @@ const HeroImage = styled(Img)`
   top: 0;
   left: 0;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   opacity: 0.07;
 `
 
 const Container = styled.div`
   .header {
     position: relative;
+    min-height: 100vh;
   }
   br {
     line-height: 60px;
   }
-  margin-top: 90px;
+  margin-top: -60px;
   ${media.greaterThan('medium')`
     margin-top: -90px;
   `};
@@ -115,5 +116,4 @@ const Container = styled.div`
     display: flex;
     align-items: center;
   }
-  min-height: 85vh;
 `

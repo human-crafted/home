@@ -3,9 +3,13 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import media from 'styled-media-query'
 
-const Item = ({ text, to }) => (
+const Item = ({ text, to, closeMenu }) => (
   <HeaderItem>
-    <NavLink to={to} activeClassName="active">
+    <NavLink
+      to={to}
+      activeClassName="active"
+      onClick={closeMenu || (() => null)}
+    >
       {text}
     </NavLink>
   </HeaderItem>

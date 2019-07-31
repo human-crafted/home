@@ -49,7 +49,9 @@ const HeroContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   .container {
-    margin-top: auto;
+    ${media.greaterThan('medium')`
+     margin-top: auto;
+  `};
     max-width: 500px;
     justify-content: center;
     display: flex;
@@ -61,6 +63,10 @@ const HeroContainer = styled.div`
     }
   }
   .scroll {
+    display: none;
+    ${media.greaterThan('medium')`
+      display: block
+  `};
     text-align: center;
     align-self: center;
     margin-top: auto;

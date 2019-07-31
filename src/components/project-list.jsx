@@ -114,7 +114,7 @@ export default Process
 
 const Container = styled.div`
   display: flex;
-  min-height: 110vh;
+  min-height: 100vh;
   justify-content: center;
   flex-direction: column;
   align-items: center;
