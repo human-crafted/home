@@ -25,7 +25,7 @@ const TextItem = styled.div`
   padding: 45px 0px;
   display: flex;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
   ${p => p.right && `

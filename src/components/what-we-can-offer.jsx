@@ -77,7 +77,7 @@ const WhatWeCanOffer = props => (
 export default WhatWeCanOffer
 
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;

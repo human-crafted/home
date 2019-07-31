@@ -12,9 +12,9 @@ import PageEnd from '../components/page-end'
 const WhatWeDo = props => (
   <>
     <SEO title="What We Do" />
-    <HeroImage fluid={props.data.successImg.childImageSharp.fluid} />
     <Container>
       <div className="header">
+        <HeroImage fluid={props.data.successImg.childImageSharp.fluid} />
         <TextBanner clear>
           <h1>Quality software done right</h1>
           <p>
@@ -95,7 +95,7 @@ const HeroImage = styled(Img)`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   opacity: 0.07;
 `
 
@@ -103,6 +103,7 @@ const Container = styled.div`
   .header {
     position: relative;
     min-height: 100vh;
+    overflow: hidden;
   }
   br {
     line-height: 60px;
