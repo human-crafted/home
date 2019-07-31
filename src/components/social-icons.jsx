@@ -18,14 +18,14 @@ const SocialIcons = ({ mobile }) => (
       Icon={FaLinkedinIn}
       link="https://www.linkedin.com/company/human-crafted-tech"
     />
-    <SocialIcon
-      top
-      Icon={FaInstagram}
-      link="https://www.linkedin.com/company/human-crafted-tech"
-    />
+    {/*<SocialIcon*/}
+    {/*  top*/}
+    {/*  Icon={FaInstagram}*/}
+    {/*  link="https://www.linkedin.com/company/human-crafted-tech"*/}
+    {/*/>*/}
     <SocialIcon
       Icon={FaTwitter}
-      link="https://www.linkedin.com/company/human-crafted-tech"
+      link="https://twitter.com/humancrafted_"
     />
   </SocialIconsContainer>
 )
