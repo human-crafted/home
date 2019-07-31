@@ -48,7 +48,7 @@ const WhatWeCanOffer = props => (
   <Background black={props.black}>
     <PageContainer>
       <Container>
-        <h2>What We Can Offer You</h2>
+        <h1>What We Can Offer You</h1>
         <div className="grid">
           <Item number="01" title="Product Design" top>
             Qualified UX experts with users at heart, helping you research,
@@ -68,7 +68,7 @@ const WhatWeCanOffer = props => (
             architecture, cloud deployment and scalability.
           </Item>
         </div>
-        <PageLink to="/what-we-do">Hear more</PageLink>
+        {props.link && <PageLink to="/what-we-do">See more</PageLink>}
       </Container>
     </PageContainer>
   </Background>
@@ -77,11 +77,14 @@ const WhatWeCanOffer = props => (
 export default WhatWeCanOffer
 
 const Container = styled.div`
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   padding: 45px 0px;
-  h2 {
+  h1 {
     line-height: 2.25rem;
     margin-bottom: 45px;
-    width: 160px;
   }
   ${media.greaterThan('medium')`
     padding: 90px 0px;
@@ -89,8 +92,8 @@ const Container = styled.div`
      display: flex;
      flex-wrap: wrap;
     }
-    h2 {
-    margin-bottom: 80px;
+    h1 {
+    margin-bottom: 160px;
     }
   `};
 `

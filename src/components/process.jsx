@@ -4,7 +4,7 @@ import TextBanner from './text-banner'
 
 const Process = () => (
   <TextBanner>
-    <h2>Process</h2>
+    <h1>Process</h1>
     <p>
       We approach every project with a long-term view ensuing sustainability,
       maintainability and stability are always at the heart of our decisions.

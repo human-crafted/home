@@ -20,32 +20,36 @@ import './layout.css'
 import Footer from '../components/footer'
 import Transition from '../components/transistion'
 
-const Index = ({ children, location }) => (
-  <ThemeProvider theme={theme}>
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
+const Index = ({ children, location }) => {
+  const blackFooter = location.pathname === '/'
+  const showChat = location.pathname !== '/contact'
+  return (
+    <ThemeProvider theme={theme}>
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
             }
           }
-        }
-      `}
-      render={data => (
-        <>
-          <NavBar siteTitle={data.site.siteMetadata.title} />
-          <Transition location={location}>
-            <Main>{children}</Main>
-          </Transition>
-          <SocialIcons />
-          <ChatIcon />
-          <Footer />
-        </>
-      )}
-    />
-  </ThemeProvider>
-)
+        `}
+        render={data => (
+          <>
+            <NavBar siteTitle={data.site.siteMetadata.title} />
+            <Transition location={location}>
+              <Main>{children}</Main>
+            </Transition>
+            <SocialIcons />
+            {showChat && <ChatIcon />}
+            <Footer black={blackFooter} />
+          </>
+        )}
+      />
+    </ThemeProvider>
+  )
+}
 
 Index.propTypes = {
   children: PropTypes.node.isRequired,

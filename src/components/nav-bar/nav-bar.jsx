@@ -37,7 +37,10 @@ const NavBar = () => {
         <Logo to="/">
           <img src={logo} alt="Humancrafted logo" />
         </Logo>
-        <Header className={show ? 'active' : 'hidden'}>
+        <Header
+          className={show ? 'active' : 'hidden'}
+          scrollPos={scrollPosition}
+        >
           <List>
             <Item to="/about" text="About" />
             <Item to="/what-we-do" text="What we do" />
@@ -46,7 +49,10 @@ const NavBar = () => {
         </Header>
       </Desktop>
       <Mobile>
-        <Header className={show ? 'active' : 'hidden'}>
+        <Header
+          className={show ? 'active' : 'hidden'}
+          scrollPos={scrollPosition}
+        >
           <MenuWrapper>
             <Menu
               onStateChange={({ isOpen }) => setMobileMenuIsOpen(isOpen)}
@@ -97,7 +103,7 @@ const Header = styled.header`
   position: fixed;
   height: 60px;
   width: 100%;
-  background-color: ${p => p.theme.colors.primary};
+  ${p => p.scrollPos < -100 && `background-color: ${p.theme.colors.primary}`};
   top: 0;
   left: 0;
   display: flex;

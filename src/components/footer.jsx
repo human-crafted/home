@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const Footer = () => (
-  <FooterContainer>
+const Footer = ({ black }) => (
+  <FooterContainer black={black}>
     <FooterLink>Human Crafted Technology ltd - 2019</FooterLink>
   </FooterContainer>
 )
@@ -17,6 +17,7 @@ const FooterContainer = styled.div`
   width: 100%;
   position: relative;
   text-align: center;
+  ${p => p.black && `background-color: black;`}
 `
 
 const FooterLink = styled(Link)`

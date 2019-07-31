@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import PageContainer from './page-container'
-import PageLink from './page-link'
+import background from '../assets/howly-bg.svg'
 import logo from '../assets/howly-logo.svg'
 
 const Project = props => (
@@ -12,7 +12,7 @@ const Project = props => (
       React Native, Node.js, AWS,
       <br /> Serverless, Product Design
     </h2>
-    <p>The snapchat of events, Howly keeps you and your friends connected.</p>
+    <p>The snapchat of events, Howly keeps you and your friends connected</p>
   </ProjectContainer>
 )
 
@@ -26,15 +26,19 @@ const ProjectContainer = styled.a`
   height: 25vw;
   min-height: 350px;
   max-height: 400px;
-  margin: 40px;
+  margin-bottom: 40px;
   border-radius: 3px;
   background-color: #431190;
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 20px 20px 0px 20px;
   box-shadow: 0px 2px 16px -6px #000000;
   transition: 0.2s ease-in-out;
   flex-basis: 100%;
   img {
-    width: 25%;
+    width: 20%;
+    min-width: 175px;
   }
   :hover {
     transform: translate(0px, -8px);
@@ -42,15 +46,10 @@ const ProjectContainer = styled.a`
   }
 `
 
-const Article = ({ link, title, views }) => (
-  <ArticleContainer href={link} target="_blank">
+const Article = ({ link, title, views, last }) => (
+  <ArticleContainer href={link} target="_blank" last={last}>
     <h3>{title}</h3>
-    {views && (
-<p>
-Views{" "}{views}
-+
-</p>
-)}
+    {views && <p>Views {views}+</p>}
   </ArticleContainer>
 )
 
@@ -76,7 +75,7 @@ const ArticleContainer = styled.a`
   ${media.greaterThan('medium')`
       height: 20vw;
       max-height: 200px;
-      margin-right: 20px;
+      ${p => !p.last && 'margin-right: 20px;'}
   `}
   :hover {
     transform: translate(0px, -8px);
@@ -86,6 +85,9 @@ const ArticleContainer = styled.a`
 const Process = props => (
   <PageContainer>
     <Container>
+      <div className="heading">
+        <h1>Recent Work</h1>
+      </div>
       <Project />
       <div className="articles">
         <Article
@@ -99,6 +101,7 @@ const Process = props => (
           link="https://medium.com/hackernoon/building-a-dashboard-with-react-graphql-de4203eee6c9"
         />
         <Article
+          last
           title="Progressive Web Apps. The future… 🚀"
           link="https://medium.com/@mitchclay0/progressive-web-apps-the-future-6f3b2bf32e75"
         />
@@ -111,8 +114,17 @@ export default Process
 
 const Container = styled.div`
   display: flex;
+  min-height: 110vh;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-top: 45px;
+  .heading {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 45px;
+  }
   .articles {
     width: 100%;
     flex-direction: column;

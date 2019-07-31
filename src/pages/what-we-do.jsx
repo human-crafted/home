@@ -1,23 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 import SEO from '../components/seo'
-import PageContainer from '../components/page-container'
 import TextBanner from '../components/text-banner'
 import PageLink from '../components/page-link'
 import WhatWeCanOffer from '../components/what-we-can-offer'
 import PageEnd from '../components/page-end'
 
-const WhatWeDo = () => (
+const WhatWeDo = props => (
   <>
     <SEO title="What We Do" />
+    <HeroImage fluid={props.data.successImg.childImageSharp.fluid} />
     <Container>
-      <PageContainer>
-        <div className="heading">
-          <h1>Quality software done right</h1>
-        </div>
-      </PageContainer>
-      <TextBanner clear small>
+      <TextBanner clear>
+        <h1>Quality software done right</h1>
         <p>
           Humancrafted partners with clients to create solutions to the toughest
           user and software problems. Focusing on Javascript as our core
@@ -33,7 +31,7 @@ const WhatWeDo = () => (
       </TextBanner>
       <WhatWeCanOffer black />
       <TextBanner clear>
-        <h2>New Products & MVPs</h2>
+        <h1>New Products & MVPs</h1>
         <p>
           You know what needs to happen next, and you have a vision for the
           solution you need to build. Either way, you need to deliver it fast -
@@ -54,7 +52,7 @@ const WhatWeDo = () => (
         </p>
       </TextBanner>
       <TextBanner>
-        <h2>Existing Products</h2>
+        <h1>Existing Products</h1>
         <p>
           Maybe you’re looking to modernize your product, transition your team
           to a new technology, or troubleshoot issues, regardless Humancrafted
@@ -70,20 +68,43 @@ const WhatWeDo = () => (
           you along the way to avoid common pitfalls.
         </p>
       </TextBanner>
-      <PageEnd />
+      <PageEnd text="Have an idea?" linkText="Talk to us." link="/contact" />
     </Container>
   </>
 )
 
+export const pageQuery = graphql`
+  query {
+    successImg: file(relativePath: { eq: "success.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
 export default WhatWeDo
 
+const HeroImage = styled(Img)`
+  z-index: 0;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110vh;
+  opacity: 0.07;
+`
+
 const Container = styled.div`
+z-index: 999;
   br {
     line-height: 60px;
   }
   margin-top: 90px;
   ${media.greaterThan('medium')`
-    margin-top: 0px;
+    margin-top: -90px;
   `};
   .heading {
     padding-top: 90px;

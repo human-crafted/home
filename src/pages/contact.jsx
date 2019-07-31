@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
+import Footer from '../components/footer'
 
 const InputField = ({ label, type, placeholder, required, fullWidth }) => (
   <Label fullWidth={fullWidth}>

@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import Img from 'gatsby-image'
 import PageContainer from './page-container'
-import ScrollDown from './scroll-down';
+import ScrollDown from './scroll-down'
 
-const Hero = () => (
+const Hero = props => (
   <PageContainer>
     <HeroContainer>
       <div className="container">
@@ -19,11 +20,21 @@ const Hero = () => (
           see the whole page
         </p>
       </div>
+      <TakeOff fluid={props.image.childImageSharp.fluid} />
     </HeroContainer>
   </PageContainer>
 )
 
 export default Hero
+
+const TakeOff = styled(Img)`
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.07;
+`
 
 const HeroContainer = styled.div`
   width: 100%;

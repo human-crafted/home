@@ -33,7 +33,7 @@ const Container = styled.div`
     height: 53px;
     margin-left: -15px;
     margin-top: -70px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(100, 100, 100, 0.2);
     border-radius: 20px;
   }
 

@@ -15,13 +15,13 @@ import Intro from '../components/intro'
 const IndexPage = props => (
   <>
     <SEO title="Home" keywords={keyWords} />
-    <Hero />
+    <Hero image={props.data.takeOffImg} />
     <Intro />
     <WhatWeCanOffer link />
-    <DeskImage fluid={props.data.deskImg.childImageSharp.fluid} />
+    {/*<DeskImage fluid={props.data.deskImg.childImageSharp.fluid} />*/}
     <Process />
     <ProjectList />
-    <PageEnd />
+    <PageEnd text="Hear more" linkText="about us" link="/about" black />
   </>
 )
 
@@ -30,6 +30,13 @@ export default IndexPage
 export const pageQuery = graphql`
   query {
     deskImg: file(relativePath: { eq: "desk.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    takeOffImg: file(relativePath: { eq: "take-off.jpg" }) {
       childImageSharp {
         fluid(maxHeight: 1000) {
           ...GatsbyImageSharpFluid
