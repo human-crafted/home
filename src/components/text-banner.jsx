@@ -21,7 +21,7 @@ const TextBanner = props => (
 export default TextBanner
 
 const TextItem = styled.div`
-  z-index: 999;
+  position: relative;
   padding: 45px 0px;
   display: flex;
   width: 100vw;

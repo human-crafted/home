@@ -7,7 +7,7 @@ import PageLink from './page-link'
 const Item = ({ number, title, children, top, last }) => (
   <ItemContainer top={top} last={last}>
     <div className="headings">
-      <h3>{number}</h3>
+      <h3>{number}.</h3>
       <h3 className="title">{title}</h3>
     </div>
     <p>{children}</p>
@@ -23,9 +23,9 @@ const ItemContainer = styled.div`
   ${p =>
     p.top
       ? media.greaterThan('medium')
-        ? `margin-bottom: 50px`
+        ? `margin-bottom: 60px`
         : `margin-bottom: 40px`
-      : ''};
+      : 'margin-bottom: 40px'};
   h3 {
     margin-bottom: 8px;
   }
@@ -48,7 +48,7 @@ const WhatWeCanOffer = props => (
   <Background black={props.black}>
     <PageContainer>
       <Container>
-        <h1>What We Can Offer You</h1>
+        <h1>What We Do</h1>
         <div className="grid">
           <Item number="01" title="Product Design" top>
             Qualified UX experts with users at heart, helping you research,
@@ -68,7 +68,7 @@ const WhatWeCanOffer = props => (
             architecture, cloud deployment and scalability.
           </Item>
         </div>
-        {props.link && <PageLink to="/what-we-do">See more</PageLink>}
+        {props.link && <PageLink to="/what-we-do">More detail</PageLink>}
       </Container>
     </PageContainer>
   </Background>
@@ -81,10 +81,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 45px 0px;
+  padding: 90px 0px;
   h1 {
     line-height: 2.25rem;
-    margin-bottom: 45px;
+    margin-bottom: 90px;
   }
   ${media.greaterThan('medium')`
     padding: 90px 0px;
@@ -93,7 +93,7 @@ const Container = styled.div`
      flex-wrap: wrap;
     }
     h1 {
-    margin-bottom: 160px;
+      margin-bottom: 160px;
     }
   `};
 `
