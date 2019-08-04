@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import { Link } from 'gatsby'
 import PageContainer from './page-container'
 import background from '../assets/howly-bg.svg'
-import logo from '../assets/howly-logo.svg'
+import logo from '../assets/images/howly-logo.png'
 
 const Project = props => (
-  <ProjectContainer href="https://www.howly.humancrafted.tech" target="_blank">
+  <ProjectContainer to="/howly">
     <img src={logo} alt="Howly logo" />
     <h2>
       React Native, Node.js, AWS,
@@ -16,7 +17,7 @@ const Project = props => (
   </ProjectContainer>
 )
 
-const ProjectContainer = styled.a`
+const ProjectContainer = styled(Link)`
   color: white;
   text-decoration: none;
   display: flex;
