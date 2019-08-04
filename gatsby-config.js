@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Humancrafted`,
-    description: `We’re a Bournemouth based and globally operating, engineering and product consultancy specialising in User Experience, React.js and React Native, GraphQL, Node.js and the extended Javascript ecosystem. In short, we build high quality exclusive mobile and web applications.`,
+    description: `Humancrafted is a Bournemouth based and globally operating, engineering and product consultancy specialising in User Experience, React.js and React Native, GraphQL, Node.js and the extended Javascript ecosystem. In short, we build high quality exclusive mobile and web applications.`,
     author: `Humancrafted Technology ltd`,
   },
   plugins: [
