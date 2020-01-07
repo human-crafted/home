@@ -55,5 +55,13 @@ module.exports = {
         hostname: 'www.humancrafted.tech',
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS,
+        anonymize: true,
+        allowAdFeatures: false,
+      },
+    },
   ],
 }

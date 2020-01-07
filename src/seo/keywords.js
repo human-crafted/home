@@ -16,6 +16,10 @@ const keyWords = [
   'web apps',
   'single page app',
   'humancrafted',
+  'human crafted',
+  'web design company',
+  'mobile development company',
+  'software development',
   'mitch clay',
 ]
 

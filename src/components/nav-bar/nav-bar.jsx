@@ -44,7 +44,7 @@ const NavBar = () => {
         >
           <List>
             <Item to="/about" text="About" />
-            <Item to="/what-we-do" text="What we do" />
+            <Item to="/what-we-do" text="What We Do" />
             <Item to="/contact" text="Contact Us" />
           </List>
         </Header>
@@ -63,7 +63,7 @@ const NavBar = () => {
             >
               <Item to="/" text="Home" closeMenu={closeMenu} />
               <Item to="/about" text="About" closeMenu={closeMenu} />
-              <Item to="/what-we-do" text="What we do" closeMenu={closeMenu} />
+              <Item to="/what-we-do" text="What We Do" closeMenu={closeMenu} />
               <Item to="/contact" text="Contact Us" closeMenu={closeMenu} />
               <SocialIcons mobile />
             </Menu>
