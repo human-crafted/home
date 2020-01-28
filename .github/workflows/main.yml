@@ -11,7 +11,7 @@ jobs:
       - name: Set Node.js
         uses: actions/setup-node@master
         with:
-          node-version: 10.x
+          node-version: 12.x
 
       - name: Install dependencies
         run: yarn install --prod --pure-lockfile
@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: yarn run build
         env:
-          GOOGLE_ANALYTICS: ${{ secrets.google_analytics }}
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
