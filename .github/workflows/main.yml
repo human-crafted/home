@@ -2,10 +2,8 @@ name: CI
 
 on:
   push:
-    # Sequence of patterns matched against refs/heads
     branches:
-      - master         # Push events on master branch
-      - github-action
+      - master
 
 jobs:
   update:
