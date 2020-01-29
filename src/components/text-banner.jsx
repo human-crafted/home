@@ -25,10 +25,13 @@ const TextItem = styled.div`
   padding: 45px 0px;
   display: flex;
   width: 100vw;
+  max-width: 100%;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  ${p => p.right && `
+  ${p =>
+    p.right &&
+    `
     .container {
       display: flex;
       flex-direction: column;
