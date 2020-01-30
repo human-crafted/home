@@ -8,7 +8,7 @@ import Footer from '../components/footer'
 const InputField = ({ label, type, placeholder, required, fullWidth }) => (
   <Label fullWidth={fullWidth}>
     {label}
-    {required && <>*</>}
+    {!required && <> (optional)</>}
     <Input
       type={type}
       name={label}
@@ -75,7 +75,7 @@ const Contact = () => (
             placeholder="Your phone number"
           />
           <Label fullWidth>
-            Message*
+            Message
             <textarea
               name="message"
               id="message"
