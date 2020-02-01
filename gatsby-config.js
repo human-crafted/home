@@ -31,8 +31,8 @@ module.exports = {
         name: `Humancrafted`,
         short_name: `Humancrafted`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#141414`,
+        theme_color: `#141414`,
         display: `minimal-ui`,
         icon: `src/images/logo-small.png`, // This path is relative to the root of the site.
       },
