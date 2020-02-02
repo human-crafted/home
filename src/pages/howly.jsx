@@ -1,12 +1,11 @@
-import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import React from 'react'
 import styled from 'styled-components'
-import media from 'styled-media-query'
-import SEO from '../components/seo'
-import logo from '../assets/images/howly-logo.png'
-import background from '../assets/howly-bg.svg'
 import appStore from '../assets/app-store.svg'
+import background from '../assets/howly-bg.svg'
 import PageContainer from '../components/page-container'
+import SEO from '../components/seo'
 
 const IndexPage = props => (
   <>
@@ -14,7 +13,11 @@ const IndexPage = props => (
     <PageContainer>
       <Container>
         <div className="content">
-          <img src={logo} alt="Howly logo" className="howlyLogo" />
+          <Img
+            fluid={props.data.howlyLogoImg.childImageSharp.fluid}
+            alt="Howly logo"
+            className="howlyLogo"
+          />
           <p>
             Stay connected with friends, invite and share when you're heading
             out
@@ -41,13 +44,21 @@ export const pageQuery = graphql`
   query {
     takeOffImg: file(relativePath: { eq: "take-off.jpg" }) {
       childImageSharp {
-        fluid(maxHeight: 1000) {
+        fluid(maxHeight: 1000, quality: 50) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    howlyLogoImg: file(relativePath: { eq: "howly-logo.png" }) {
+      childImageSharp {
+        fluid(maxHeight: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
   }
 `
+
 const Container = styled.div`
   position: relative;
   text-align: center;
@@ -65,9 +76,11 @@ const Container = styled.div`
   .howlyLogo {
     width: 75vw;
     max-width: 300px;
+    padding: 0;
+    margin: 0 auto 1.45em;
   }
   .appStore {
-   max-width: 125px;
+    max-width: 125px;
     width: 25vw;
   }
   min-height: 85vh;

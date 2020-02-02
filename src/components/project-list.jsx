@@ -1,21 +1,43 @@
+import { graphql, Link, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import { Link } from 'gatsby'
-import PageContainer from './page-container'
 import background from '../assets/howly-bg.svg'
-import logo from '../assets/images/howly-logo.png'
+import PageContainer from './page-container'
 
-const Project = props => (
-  <ProjectContainer to="/howly">
-    <img src={logo} alt="Howly logo" />
-    <h2>
-      React Native, Node.js, AWS,
-      <br /> Serverless, Product Design
-    </h2>
-    <p>The snapchat of events, Howly keeps you and your friends connected</p>
-  </ProjectContainer>
-)
+const Project = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      howlyLogoImg: file(relativePath: { eq: "howly-logo.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <ProjectContainer to="/howly">
+      <HowlyLogoImg
+        fluid={data.howlyLogoImg.childImageSharp.fluid}
+        alt="Howly logo"
+      />
+      <h2>
+        React Native, Node.js, AWS,
+        <br /> Serverless, Product Design
+      </h2>
+      <p>The snapchat of events, Howly keeps you and your friends connected</p>
+    </ProjectContainer>
+  )
+}
+
+const HowlyLogoImg = styled(Img)`
+  margin: 0 0 1.45rem;
+  min-width: 175px;
+  width: 20%;
+`
 
 const ProjectContainer = styled(Link)`
   color: white;
@@ -48,7 +70,7 @@ const ProjectContainer = styled(Link)`
 `
 
 const Article = ({ link, title, views, last }) => (
-  <ArticleContainer href={link} target="_blank" last={last}>
+  <ArticleContainer href={link} target="_blank" rel="noopener" last={last}>
     <h3>{title}</h3>
     {views && <p>Views {views}+</p>}
   </ArticleContainer>
@@ -83,7 +105,7 @@ const ArticleContainer = styled.a`
   }
 `
 
-const Process = props => (
+const Process = () => (
   <PageContainer>
     <Container>
       <div className="heading">
@@ -131,7 +153,7 @@ const Container = styled.div`
     flex-direction: column;
     display: flex;
     ${media.greaterThan('medium')`
-     flex-direction: row;
+      flex-direction: row;
     `}
   }
 `
