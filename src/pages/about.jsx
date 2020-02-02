@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
+import SEO from '../components/seo'
 
 const About = () => (
   <>
@@ -22,7 +22,11 @@ const About = () => (
           applications.
           <br />
           Humancrafted was founded by{' '}
-          <a href="https://www.linkedin.com/in/mitchclay/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/mitchclay/"
+            target="_blank"
+            rel="noopener"
+          >
             Mitch Clay
           </a>{' '}
           to bring together a unique group of individuals with a shared dream of
@@ -37,16 +41,28 @@ const About = () => (
         </p>
         <p className="links">
           Find Mitch here:{' '}
-          <a href="https://www.linkedin.com/in/mitchclay/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/mitchclay/"
+            target="_blank"
+            rel="noopener"
+          >
             Linkedin
           </a>
           ,{' '}
-          <a href="https://medium.com/@mitchclay0" target="_blank">
+          <a
+            href="https://medium.com/@mitchclay0"
+            target="_blank"
+            rel="noopener"
+          >
             {' '}
             Medium
           </a>
           ,{' '}
-          <a href="https://twitter.com/MitchClay0" target="_blank">
+          <a
+            href="https://twitter.com/MitchClay0"
+            target="_blank"
+            rel="noopener"
+          >
             Twitter
           </a>
         </p>
