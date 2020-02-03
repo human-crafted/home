@@ -1,11 +1,11 @@
 import React from 'react'
+import { FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import { FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa'
 
-const SocialIcon = ({ Icon, link, top }) => (
+const SocialIcon = ({ Icon, link, top, title }) => (
   <Item top={top}>
-    <a href={link}>
+    <a href={link} title={title}>
       <Icon size={18} />
     </a>
   </Item>
@@ -17,6 +17,7 @@ const SocialIcons = ({ mobile }) => (
       top
       Icon={FaLinkedinIn}
       link="https://www.linkedin.com/company/human-crafted-tech"
+      title="Humancrafted on LinkedIn"
     />
     {/*<SocialIcon*/}
     {/*  top*/}
@@ -25,7 +26,8 @@ const SocialIcons = ({ mobile }) => (
     {/*/>*/}
     <SocialIcon
       Icon={FaTwitter}
-      link="https://twitter.com/humancrafted_"
+      link="https://twitter.com/humancrafted"
+      title="Humancrafted on Twitter"
     />
   </SocialIconsContainer>
 )
@@ -33,7 +35,9 @@ const SocialIcons = ({ mobile }) => (
 export default SocialIcons
 
 const SocialIconsContainer = styled.div`
-  ${p => !p.mobile && `
+  ${p =>
+    !p.mobile &&
+    `
     display: none;
     ${media.lessThan('small')`
       display: flex;
@@ -45,7 +49,9 @@ const SocialIconsContainer = styled.div`
     position: fixed;
     bottom: 4vh;
   `};
-  ${p => p.mobile && `
+  ${p =>
+    p.mobile &&
+    `
     flex-direction: row;
     display: flex;
     position: absolute;
@@ -57,10 +63,10 @@ const SocialIconsContainer = styled.div`
 
 const Item = styled.div`
   padding-left: 24px;
-  padding-bottom: ${p => p.top ? 36 : 12}px;
+  padding-bottom: ${p => (p.top ? 36 : 12)}px;
   ${media.greaterThan('large')`
      padding-left: 34px;
-     padding-bottom: ${p => p.top ? 51 : 17}px;
+     padding-bottom: ${p => (p.top ? 51 : 17)}px;
   `};
   a {
     color: ${p => p.theme.colors.grey};

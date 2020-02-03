@@ -25,7 +25,8 @@ const About = () => (
           <a
             href="https://www.linkedin.com/in/mitchclay/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
+            title="Mitch on LinkedIn"
           >
             Mitch Clay
           </a>{' '}
@@ -45,14 +46,16 @@ const About = () => (
             href="https://www.linkedin.com/in/mitchclay/"
             target="_blank"
             rel="noopener"
+            title="Mitch on LinkedIn"
           >
-            Linkedin
+            LinkedIn
           </a>
           ,{' '}
           <a
             href="https://medium.com/@mitchclay0"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
+            title="Mitch on Medium"
           >
             {' '}
             Medium
@@ -61,7 +64,8 @@ const About = () => (
           <a
             href="https://twitter.com/MitchClay0"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
+            title="Mitch on Twitter"
           >
             Twitter
           </a>
