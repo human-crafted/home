@@ -1,14 +1,24 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 
 const Footer = ({ black }) => (
   <FooterContainer black={black}>
     <FooterLink to="/">
       Human Crafted Technology Ltd - {new Date().getFullYear()}
     </FooterLink>
+    <LinkSeparator />
+    <FooterLink to="/privacy-policy" title="Privacy Policy">
+      Privacy Policy
+    </FooterLink>
+    <LinkSeparator />
+    <FooterLink to="/terms-of-service" title="Terms of Service">
+      Terms of Service
+    </FooterLink>
   </FooterContainer>
 )
+
+const LinkSeparator = () => <>&nbsp;&middot;&nbsp;</>
 
 export default Footer
 
