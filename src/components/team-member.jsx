@@ -23,11 +23,11 @@ const Item = styled.div`
   }
 `
 
-const TeamMember = ({ firstName, lastName, jobRole, image, links }) => (
+const TeamMember = ({ firstName, jobRole, image, links }) => (
   <Container>
     <TeamMemberIcon fluid={image.childImageSharp.fluid} />
     <p id="name">
-      {firstName} {lastName.charAt(0)}.
+      {firstName}
     </p>
     <p id="job">{jobRole}</p>
     <SocialIconContainer>
@@ -45,6 +45,7 @@ export default TeamMember
 
 const TeamMemberIcon = styled(Img)`
   width: 100%;
+  height: 100%;
   opacity: 0.75;
   border-radius: 50%;
   max-width: 150px;
@@ -59,16 +60,20 @@ const SocialIconContainer = styled.div`
 
 const Container = styled.div`
   background-color: ${p => p.theme.colors.secondary};
-  min-width: 240px;
-  max-width: 320px;
-  flex: 1;
+  width: 100%;
+  ${media.greaterThan('medium')`
+   min-width: 190px;
+   max-width: 240px;
+   min-height: 320px;
+  `};
+  max-width: 240px;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 12px;
   padding: 24px 32px 24px 32px;
-  width: 100%;
   p {
     margin-bottom: 0;
     text-align: center;

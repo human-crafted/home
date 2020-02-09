@@ -13,7 +13,7 @@ const About = props => {
       <PageContainer>
         <Container>
           <div className="heading">
-            <h1>The Core Team</h1>
+            <h1>Core Team</h1>
           </div>
           <p>
             Our team of experts are deeply invested in the technology & design
@@ -26,7 +26,6 @@ const About = props => {
           <TeamMember
             image={props.data.mitch}
             firstName="Mitch"
-            lastName="Clay"
             jobRole="Founder & Developer"
             links={{
               medium: 'https://medium.com/@mitchclay0',
@@ -37,22 +36,18 @@ const About = props => {
           <TeamMember
             image={props.data.carl}
             firstName="Carl"
-            lastName="Saunders"
             jobRole="Fullstack Developer"
-            about="Mitch Likes Pizza"
             links={{
               dev: 'https://dev.to/t/io',
-              linkedin: 'linkedin.com/in/carlsaunders/',
+              linkedin: 'https://linkedin.com/in/carlsaunders/',
             }}
           />
           <TeamMember
             image={props.data.sam}
             firstName="Sam"
-            lastName="Sheppard"
             jobRole="Fullstack Developer"
-            about="Mitch Likes Pizza"
             links={{
-              linkedin: 'linkedin.com/in/samjsheppard/',
+              linkedin: 'https://linkedin.com/in/samjsheppard/',
             }}
           />
         </TeamContainer>
@@ -65,7 +60,7 @@ export default About
 
 export const pageQuery = graphql`
   query {
-    mitch: file(relativePath: { eq: "team/mitch-small.png" }) {
+    mitch: file(relativePath: { eq: "team/mitch-small-1.png" }) {
       childImageSharp {
         fluid(maxHeight: 1000) {
           ...GatsbyImageSharpFluid
@@ -115,12 +110,12 @@ const Container = styled.div`
 
 const TeamContainer = styled.div`
   width: 100%;
+  max-width: 850px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   ${media.greaterThan('medium')`
-    flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: row;
   `};
 `
