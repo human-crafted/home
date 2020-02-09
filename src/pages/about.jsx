@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import PageContainer from '../components/page-container'
+import { Link } from 'gatsby'
 import SEO from '../components/seo'
+import PageContainer from '../components/page-container'
 
 const About = () => (
   <>
@@ -39,36 +40,6 @@ const About = () => (
           exceptional experiences through technology. He's not new to the space
           working previously with businesses like <Bold>The App Business</Bold>,{' '}
           <Bold>Big Radical</Bold> and <Bold>Bentley</Bold>.
-        </p>
-        <p className="links">
-          Find Mitch here:{' '}
-          <a
-            href="https://www.linkedin.com/in/mitchclay/"
-            target="_blank"
-            rel="noopener"
-            title="Mitch on LinkedIn"
-          >
-            LinkedIn
-          </a>
-          ,{' '}
-          <a
-            href="https://medium.com/@mitchclay0"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Mitch on Medium"
-          >
-            {' '}
-            Medium
-          </a>
-          ,{' '}
-          <a
-            href="https://twitter.com/MitchClay0"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Mitch on Twitter"
-          >
-            Twitter
-          </a>
         </p>
       </Container>
     </PageContainer>
