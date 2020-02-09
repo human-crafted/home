@@ -6,7 +6,7 @@ import { FaLinkedinIn, FaTwitter, FaMedium, FaDev } from 'react-icons/fa'
 
 const SocialIcon = ({ Icon, link }) => (
   <Item>
-    <a href={link}>
+    <a target="_blank" rel="noopener noreferrer" href={link}>
       <Icon size={18} />
     </a>
   </Item>
@@ -26,9 +26,7 @@ const Item = styled.div`
 const TeamMember = ({ firstName, jobRole, image, links }) => (
   <Container>
     <TeamMemberIcon fluid={image.childImageSharp.fluid} />
-    <p id="name">
-      {firstName}
-    </p>
+    <p id="name">{firstName}</p>
     <p id="job">{jobRole}</p>
     <SocialIconContainer>
       {links.linkedin && (
