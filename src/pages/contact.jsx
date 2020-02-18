@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
-import Footer from '../components/footer'
 
 const InputField = ({ label, type, placeholder, required, fullWidth }) => (
   <Label fullWidth={fullWidth}>
-    {label}
-    {!required && <> (optional)</>}
+    <div>
+      {label}
+      {!required && <Optional> - optional</Optional>}
+    </div>
     <Input
       type={type}
       name={label}
@@ -92,6 +93,11 @@ const Contact = () => (
 )
 
 export default Contact
+
+const Optional = styled.span`
+  font-size: 16px;
+  font-style: italic;
+`
 
 const Container = styled.div`
   .header {
