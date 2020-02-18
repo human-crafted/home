@@ -4,10 +4,6 @@ import styled from 'styled-components'
 
 const Footer = ({ black }) => (
   <FooterContainer black={black}>
-    <FooterLink to="/">
-      Human Crafted Technology Ltd - {new Date().getFullYear()}
-    </FooterLink>
-    <LinkSeparator />
     <FooterLink to="/privacy-policy" title="Privacy Policy">
       Privacy Policy
     </FooterLink>
@@ -15,6 +11,14 @@ const Footer = ({ black }) => (
     <FooterLink to="/terms-of-service" title="Terms of Service">
       Terms of Service
     </FooterLink>
+    <LinkSeparator />
+    <FooterLink to="/">
+      Human Crafted Technology Ltd - {new Date().getFullYear()}
+    </FooterLink>
+    <br />
+    <FooterLink>Company No. 11756514</FooterLink>
+    <LinkSeparator />
+    <FooterLink>VAT No. 313340255</FooterLink>
   </FooterContainer>
 )
 
@@ -23,7 +27,6 @@ const LinkSeparator = () => <>&nbsp;&middot;&nbsp;</>
 export default Footer
 
 const FooterContainer = styled.div`
-  height: 30px;
   margin: 0;
   clear: both;
   width: 100%;
