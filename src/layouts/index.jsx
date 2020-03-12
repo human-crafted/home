@@ -21,7 +21,7 @@ import Footer from '../components/footer'
 import Transition from '../components/transistion'
 
 const Index = ({ children, location }) => {
-  const blackFooter = location.pathname === '/'
+  const blackFooter = window.location.pathname === '/'
   const showChat = location.pathname !== '/contact'
   return (
     <ThemeProvider theme={theme}>
