@@ -56,6 +56,7 @@ const Contact = () => (
         <SEO title="Work With Us" />
         <div className="header">
           <h1>We'd love to talk, how can we help?</h1>
+          <p>Drop an email to <a href="mailto:hello@humancrafted.tech">hello@humancrafted.tech</a>, phone us on <a href="tel:07905274785">07905274785</a> or complete the form below.</p>
         </div>
         <Form method="post" action="https://formspree.io/mqnkeldx">
           <InputField
@@ -103,7 +104,15 @@ const Container = styled.div`
   .header {
     flex: 1;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    a {
+      color: white;
+    }
+    p {
+      max-width: 500px;
+    }
   }
   display: flex;
   flex-direction: column;
