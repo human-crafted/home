@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaLinkedinIn, FaTwitter } from 'react-icons/fa'
+import { FaLinkedinIn, FaCuttlefish, FaGithub } from 'react-icons/fa'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
@@ -19,15 +19,16 @@ const SocialIcons = ({ mobile }) => (
       link="https://www.linkedin.com/company/human-crafted-tech"
       title="Humancrafted on LinkedIn"
     />
-    {/*<SocialIcon*/}
-    {/*  top*/}
-    {/*  Icon={FaInstagram}*/}
-    {/*  link="https://www.linkedin.com/company/human-crafted-tech"*/}
-    {/*/>*/}
     <SocialIcon
-      Icon={FaTwitter}
-      link="https://twitter.com/humancrafted"
-      title="Humancrafted on Twitter"
+      top
+      Icon={FaCuttlefish}
+      link="https://clutch.co/profile/humancrafted"
+      title="Read our reviews on Clutch"
+    />
+    <SocialIcon
+      Icon={FaGithub}
+      link="https://github.com/human-crafted"
+      title="Humancrafted on Github"
     />
   </SocialIconsContainer>
 )
