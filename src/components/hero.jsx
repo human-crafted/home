@@ -17,7 +17,7 @@ const Hero = props => (
         <p>
           Scroll down to
           <br />
-          see the whole page
+          read more
         </p>
       </div>
       <TakeOff fluid={props.image.childImageSharp.fluid} />
