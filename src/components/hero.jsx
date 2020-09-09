@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import Img from 'gatsby-image'
 import PageContainer from './page-container'
-import ScrollDown from './scroll-down'
+import { ClutchWidget } from './clutch-widget'
 
 const Hero = props => (
   <PageContainer>
@@ -12,13 +12,8 @@ const Hero = props => (
         <h1>The digital product consultancy trusted by engineers</h1>
         <h5>Web, Mobile Development & Design</h5>
       </div>
-      <div className="scroll">
-        <ScrollDown />
-        <p>
-          Scroll down to
-          <br />
-          read more
-        </p>
+      <div className="clutch-container">
+        <ClutchWidget />
       </div>
       <TakeOff fluid={props.image.childImageSharp.fluid} />
     </HeroContainer>
@@ -62,19 +57,12 @@ const HeroContainer = styled.div`
       font-weight: bold;
     }
   }
-  .scroll {
-    display: none;
+  .clutch-container {
+    margin-bottom: 12px;
+    z-index: 999;
     ${media.greaterThan('medium')`
-      display: block
+     margin-top: auto;
+      align-self: center;
   `};
-    text-align: center;
-    align-self: center;
-    margin-top: auto;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: bold;
-    p {
-      margin-bottom: 24px;
-    }
   }
 `

@@ -10,6 +10,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: 'gatsby-plugin-load-script',
+      options: {
+        src: 'https://widget.clutch.co/static/js/widget.js',
+        onLoad: `() => CLUTCHCO.Init()`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/assets/images`,

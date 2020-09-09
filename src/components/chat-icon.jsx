@@ -35,7 +35,7 @@ const SocialIconsContainer = styled(Link)`
       align-items: center;
       justify-content: center;
     }
- 
+
     :after {
       content: '';
       display: inline-block;
