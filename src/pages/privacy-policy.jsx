@@ -2,11 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import PageContainer from '../components/page-container'
-import SEO from '../components/seo'
 
 const PrivacyPolicy = () => (
   <>
-    <SEO title="Privacy Policy" />
     <PageContainer>
       <Container>
         <div className="heading">

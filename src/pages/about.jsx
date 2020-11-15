@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import { Link } from 'gatsby'
 import SEO from '../components/seo'
 import PageContainer from '../components/page-container'
 
 const About = () => (
   <>
-    <SEO title="About" />
+    <SEO title="About" description="Read more about us" />
     <PageContainer>
       <Container>
         <div className="heading">

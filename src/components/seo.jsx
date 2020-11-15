@@ -82,7 +82,18 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "url": "https://www.humancrafted.tech",
+          "name": "${title}",
+          "description": "${description}"
+        }
+      `}
+      </script>
+    </Helmet>
   )
 }
 

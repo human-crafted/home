@@ -11,7 +11,7 @@ import PageEnd from '../components/page-end'
 
 const WhatWeDo = props => (
   <>
-    <SEO title="What We Do" />
+    <SEO title="What We Do" description="Lean more about us" />
     <Container>
       <div className="header">
         <HeroImage fluid={props.data.successImg.childImageSharp.fluid} />
