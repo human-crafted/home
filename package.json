@@ -16,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-s3": "^0.3.2",
     "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-plugin-sitemap": "^2.6.0",
     "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-sharp": "^2.3.14",
@@ -48,7 +49,7 @@
   "scripts": {
     "deploy": "gatsby-plugin-s3 deploy -y",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8080",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",

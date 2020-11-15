@@ -53,7 +53,7 @@ const Contact = () => (
   <>
     <PageContainer>
       <Container>
-        <SEO title="Work With Us" />
+        <SEO title="Work With Us" description="Come say hi" />
         <div className="header">
           <h1>We'd love to talk, how can we help?</h1>
           <p>Drop an email to <a href="mailto:hello@humancrafted.tech">hello@humancrafted.tech</a>, phone us on <a href="tel:07905274785">07905274785</a> or complete the form below.</p>

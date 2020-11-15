@@ -2,11 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import PageContainer from '../components/page-container'
-import SEO from '../components/seo'
 
 const TermsOfService = () => (
   <>
-    <SEO title="Terms of Service" />
     <PageContainer>
       <Container>
         <div className="heading">
