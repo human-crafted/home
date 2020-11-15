@@ -59,9 +59,9 @@ const HeroContainer = styled.div`
   }
   .clutch-container {
     margin-bottom: 12px;
-    z-index: 999;
+    z-index: 10;
     ${media.greaterThan('medium')`
-     margin-top: auto;
+      margin-top: auto;
       align-self: center;
   `};
   }
