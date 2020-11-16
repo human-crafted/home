@@ -16,7 +16,7 @@ const Footer = ({ black }) => (
       Human Crafted Technology Ltd - {new Date().getFullYear()}
     </FooterLink>
     <br />
-    <FooterLink>Company No. 11756514</FooterLink>
+    <FooterLink>Company No. 11756514.</FooterLink>
     <LinkSeparator />
     <FooterLink>VAT No. 313340255</FooterLink>
   </FooterContainer>
