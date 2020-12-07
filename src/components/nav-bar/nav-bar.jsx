@@ -17,7 +17,10 @@ const NavBar = () => {
   const handleScroll = () => {
     if (!mobileMenuIsOpen) {
       setScrollPosition(document.body.getBoundingClientRect().top)
-      setShow(document.body.getBoundingClientRect().top > scrollPosition || scrollPosition > 0)
+      setShow(
+        document.body.getBoundingClientRect().top > scrollPosition ||
+          scrollPosition > 0
+      )
     }
   }
 
@@ -46,6 +49,7 @@ const NavBar = () => {
             <Item to="/about" text="About" />
             <Item to="/what-we-do" text="What We Do" />
             <Item to="/contact" text="Contact Us" />
+            <Item to="/blog" text="Blog" />
           </List>
         </Header>
       </Desktop>
@@ -65,6 +69,7 @@ const NavBar = () => {
               <Item to="/about" text="About" closeMenu={closeMenu} />
               <Item to="/what-we-do" text="What We Do" closeMenu={closeMenu} />
               <Item to="/contact" text="Contact Us" closeMenu={closeMenu} />
+              <Item to="/blog" text="Blog" closeMenu={closeMenu} />
               <SocialIcons mobile />
             </Menu>
           </MenuWrapper>
