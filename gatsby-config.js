@@ -70,5 +70,13 @@ module.exports = {
         allowAdFeatures: false,
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: "mco5kcyrorvx",
+        accessToken: "qUwWXdf7xORAYw3vdGIUE9Ra2SRFRWKY-stgg9Bnp1A",
+        downloadLocal: true
+      },
+    },
   ],
 }

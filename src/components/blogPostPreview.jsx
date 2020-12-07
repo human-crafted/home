@@ -2,20 +2,24 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import PageLink from './page-link'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-const BlogPostPreview = ({ post }) => (
-  <>
-    <Container>
-      <Link to={'/test'}>
-        <PostTitle>
-          <h2>{post.title}</h2>
-          <date>{post.date}</date>
-        </PostTitle>
-        <p1>{post.body}</p1>
-      </Link>
-    </Container>
-  </>
-)
+const BlogPostPreview = ({ post }) => {
+  console.log(post)
+  return (
+    <>
+      <Container>
+        <Link to={`/blog/${post.slug}`}>
+          <PostTitle>
+            <h2>{post.title}</h2>
+            <date>{post.date}</date>
+          </PostTitle>
+          <p1>{post.description}</p1>
+        </Link>
+      </Container>
+    </>
+  )
+}
 
 export default BlogPostPreview
 

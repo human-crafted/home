@@ -3,35 +3,59 @@ import styled from 'styled-components'
 import PageContainer from '../components/page-container'
 import SEO from '../components/seo'
 import PostItem from '../components/blogPostPreview'
+import { graphql, useStaticQuery } from 'gatsby'
 
-const posts = [
-  {
-    title: 'Title of post',
-    body: 'Body text goes here',
-    date: '01-01-2020',
-    slug: '/slug',
-  },
-  {
-    title: 'Title of second post',
-    body: 'Body text goes here.......',
-    date: '02-01-2020',
-    slug: '/slug2',
-  },
-]
+// const posts = [
+//   {
+//     title: 'Title of post',
+//     body: 'Body text goes here',
+//     date: '01-01-2020',
+//     slug: '/slug',
+//   },
+//   {
+//     title: 'Title of second post',
+//     body: 'Body text goes here.......',
+//     date: '02-01-2020',
+//     slug: '/slug2',
+//   },
+// ]
 
-const Blog = () => (
-  <>
-    <SEO title="Blog" description="keep up to date with Human Crafted" />
-    <PageContainer>
-      <Container>
-        <h1>Posts</h1>
-        {posts.map(post => {
-          return <PostItem post={post} />
-        })}
-      </Container>
-    </PageContainer>
-  </>
-)
+const Blog = () => {
+  //Contentful plost Posts
+  const contentfulData = useStaticQuery(graphql`
+    query {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            title
+            slug
+            publishedDate(formatString: "MMMM Do, YYYY")
+            description
+            body {
+              raw
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <>
+      <SEO title="Blog" description="keep up to date with Human Crafted" />
+      <PageContainer>
+        <Container>
+          <h1>Posts</h1>
+
+          {contentfulData.allContentfulBlogPost.edges.map(postNode => {
+            // console.log(post)
+            return <PostItem post={postNode.node} />
+          })}
+        </Container>
+      </PageContainer>
+    </>
+  )
+}
 
 export default Blog
 
