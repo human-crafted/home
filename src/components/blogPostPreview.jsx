@@ -27,7 +27,7 @@ const PostTitle = styled.div`
   date {
     font-size: 15px;
     font-weight: bold;
-    color: ${p.theme.grey}; // #c4c2c2;
+    color: #c4c2c2;
     padding: 0;
     margin: 0;
     margin-bottom: 1em;
@@ -38,7 +38,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  padding-bottom: 35px;
+  /* padding-bottom: 35px; */
   text-decoration: none;
   h2 {
     flex: 1;
@@ -57,7 +57,7 @@ const Container = styled.div`
   }
   /* min-height: 8vh; */
   p1 {
-    color: ${p => p.theme.colors.grey};
+    color: gray// ${p => p.theme.colors.grey};
   }
 
   br {
@@ -66,7 +66,7 @@ const Container = styled.div`
 
   :hover {
     border-radius: 20px;
-    background-color: ${p.theme.grey}; ////#444242;
+    background-color: #444242;
   }
 `
 
