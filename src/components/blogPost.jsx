@@ -48,12 +48,12 @@ const BlogPost = props => {
       },
     },
   }
-
+  console.log(post)
   return (
     <PostContainer>
       <Title>{post.title}</Title>
-      <Date>{post.date}</Date>
-      {documentToReactComponents(json, options)}
+      <Date>Published on {post.publishedDate}</Date>
+      <RichText>{documentToReactComponents(json, options)}</RichText>
     </PostContainer>
   )
 }
@@ -65,15 +65,29 @@ const PostContainer = Styled.div`
   flex-direction: column;
   padding: 20px;
   padding-bottom: 35px;
+
+a{
+    color:White;
+}
+
 `
 
 const Title = Styled.h1`
-text-align: Center
+text-align: Center;
 `
-const Date = Styled.h1`
+const Date = Styled.h2`
 display: flex;
   flex-direction: column;
-  padding: 20px;
-  padding-bottom: 35px;
-text-align: Center
+  padding: 0;
+  /* padding-bottom: 35px; */
+text-align: Center;
+color: ${p => p.theme.colors.grey};
+font-size: 18px;
+`
+
+const RichText = Styled.div`
+margin: 8em;
+margin-top: 0;
+padding:5em;
+padding-top:0;
 `

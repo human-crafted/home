@@ -12,7 +12,7 @@ const BlogPostPreview = ({ post }) => {
         <Link to={`/blog/${post.slug}`}>
           <PostTitle>
             <h2>{post.title}</h2>
-            <date>{post.date}</date>
+            <date>Published {post.publishedDate}</date>
           </PostTitle>
           <p1>{post.description}</p1>
         </Link>
@@ -27,7 +27,7 @@ const PostTitle = styled.div`
   date {
     font-size: 15px;
     font-weight: bold;
-    color: #c4c2c2;
+    color: ${p.theme.grey}; // #c4c2c2;
     padding: 0;
     margin: 0;
     margin-bottom: 1em;
@@ -66,7 +66,7 @@ const Container = styled.div`
 
   :hover {
     border-radius: 20px;
-    background-color: #444242;
+    background-color: ${p.theme.grey}; ////#444242;
   }
 `
 
