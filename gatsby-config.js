@@ -1,3 +1,13 @@
+
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
+
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.humancrafted.tech`,
@@ -73,8 +83,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: "mco5kcyrorvx",
-        accessToken: "qUwWXdf7xORAYw3vdGIUE9Ra2SRFRWKY-stgg9Bnp1A",
+        spaceId: process.env.CONTENTFUL_SPACE_ID,//"mco5kcyrorvx",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,//"qUwWXdf7xORAYw3vdGIUE9Ra2SRFRWKY-stgg9Bnp1A",
         downloadLocal: true
       },
     },
