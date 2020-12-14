@@ -65,7 +65,6 @@ const PostContainer = Styled.div`
 a{
     color:White;
 }
-
 `
 
 const Title = Styled.h1`

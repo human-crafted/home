@@ -4,17 +4,15 @@ import styled from 'styled-components'
 
 const BlogPostPreview = ({ post }) => {
   return (
-    <>
-      <Container>
-        <Link to={`/blog/${post.slug}`}>
-          <PostTitle>
-            <h2>{post.title}</h2>
-            <date>Published {post.publishedDate}</date>
-          </PostTitle>
-          <p1>{post.description}</p1>
-        </Link>
-      </Container>
-    </>
+    <Container>
+      <Link to={`/blog/${post.slug}`}>
+        <PostTitle>
+          <h2>{post.title}</h2>
+          <date>Published {post.publishedDate}</date>
+        </PostTitle>
+        <p1>{post.description}</p1>
+      </Link>
+    </Container>
   )
 }
 
