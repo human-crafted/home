@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import PageLink from './page-link'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const BlogPostPreview = ({ post }) => {
-  console.log(post)
   return (
     <>
       <Container>

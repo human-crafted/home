@@ -34,21 +34,17 @@ const BlogPost = props => {
 
         const refToNodeImg = props.data.contentfulBlogPost.body.references.filter(
           ref => {
-            console.log('Ref file URL', ref.file.url)
-            console.log('node data target', node.data.target.sys.id)
             return ref.file.url.includes(node.data.target.sys.id)
           }
         )[0]
 
-        // console.log("@@@@@@@",refToNodeImg)
-        const alt = refToNodeImg.file.fileName //node.data.targ//node.data.target.fields.title["en-US"]
-        const url = refToNodeImg.file.url //props.data.contentfulBlogPost.body.references[0].file.url
+        const alt = refToNodeImg.file.fileName
+        const url = refToNodeImg.file.url
 
         return <img alt={alt} src={url} />
       },
     },
   }
-  console.log(post)
   return (
     <PostContainer>
       <Title>{post.title}</Title>

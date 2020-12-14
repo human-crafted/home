@@ -2,23 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import PageContainer from '../components/page-container'
 import SEO from '../components/seo'
-import PostItem from '../components/blogPostPreview'
+import PostItem from '../components/blog-post-preview'
 import { graphql, useStaticQuery } from 'gatsby'
-
-// const posts = [
-//   {
-//     title: 'Title of post',
-//     body: 'Body text goes here',
-//     date: '01-01-2020',
-//     slug: '/slug',
-//   },
-//   {
-//     title: 'Title of second post',
-//     body: 'Body text goes here.......',
-//     date: '02-01-2020',
-//     slug: '/slug2',
-//   },
-// ]
 
 const Blog = () => {
   //Contentful plost Posts
@@ -42,15 +27,14 @@ const Blog = () => {
 
   return (
     <>
-      <SEO title="Blog" description="keep up to date with Human Crafted" />
+      <SEO title="Blog" description="keep up to date with Humancrafted" />
       <PageContainer>
         <Container>
           <h1>Posts</h1>
 
           {contentfulData.allContentfulBlogPost.edges.map(postNode => {
-            // console.log(post)
             return <PostItem post={postNode.node} />
-          })}
+          }) || <h1>No Posts</h1>}
         </Container>
       </PageContainer>
     </>
